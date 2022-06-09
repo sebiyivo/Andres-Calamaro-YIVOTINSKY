@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Andres Calamaro - Contacto</title>
+</head>
+<body>
+    <!-- Cabecera de la pagina -->
+    <header>
+        
+        <!-- Barra de navegacion -->
+        <nav>
+            <!-- Enlaces de navegacion -->
+            <ul>
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="./conciertos.html">CONCIERTOS</a></li>
+                <li><a href="./imagenes.html">IMAGENES</a></li>
+                <!-- Logo de la pagina -->
+                <li class="logoli">
+                    <a href="../index.html" class="logo">
+                        <img src="../assets/logoNegro.png" alt="Logo" title="Logo" height="50px" width="160px" />
+                    </a>                   
+                </li>
+                <!-- Fin logo de la pagina -->
+                <li class="desplegable">
+                    <a>ALBUMES</a>
+                      <div class="contenidoDesplegable">
+                        <a href="./solista.html">SOLISTA</a>
+                        <br>
+                        <a href="./losRodriguez.html">LOS RODRIGUEZ</a>
+                        <br>
+                        <a href="./losAbuelosDeLaNada.html">LOS ABUELOS DE LA NADA</a>
+                      </div>
+                </li>
+                <li><a href="./videoclips.html">VIDEOCLIPS</a></li>
+                <li><a href="./contacto.html">CONTACTO</a></li>
+            </ul>
+            <!-- Fin enlaces de navegacion -->
+        </nav>
+        <!-- Fin de la barra de navegacion -->
+    </header>
+    <!-- Fin de la cabecera -->
+   
+    <main>
+        <!-- Titulo -->
+        <h1>CONTACTO</h1>        
+        <!-- Fin titulo -->
+        <form>
+            <label for="nombre">NOMBRE/S</label>
+            <br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+            <br>
+            <label for="apellido">APELLIDO/S</label>
+            <br>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido">
+            <br>
+            <label for="mail">E-MAIL</label>
+            <br>
+            <input type="email" id="mail" name="mail" placeholder="Ingresa tu e-mail">
+            <br>
+            <label for="nacimiento">FECHA DE NACIMIENTO</label>
+            <br>
+            <input type="date" id="nacimiento" name="nacimiento">
+            <br>
+            <label for="pais">PAIS</label>
+            <br>
+            <select id="pais" name="pais">
+                <option selected="selected">Selecciona un pais</option>
+                <option>Argentina</option>
+                <option>Uruguay</option>
+                <option>Chile</option>
+                <option>Brasil</option>
+                <option>Peru</option>
+                <option>Bolivia</option>
+                <option>Paraguay</option>
+                <option>Venezuela</option>
+                <option>Colombia</option>
+            </select>
+            <br>
+            <label>SEXO</label>
+            <br>
+            <span>Masculino</span>
+            <input type="radio" name="opcion" value="masculino">
+            <span>Femenino</span>
+            <input type="radio" name="opcion" value="femenino">
+            <br>
+            <br>
+            <label for="mensaje">DEJANOS TU MENSAJE:</label>
+            <br>
+            <textarea id="mensaje" cols="50" rows="20" placeholder="Escribe aqui..."></textarea>
+            <br>
+            <input type="checkbox" name="aceptar">
+            <span>Quiero rebir informacion y novedades de Andres Calamaro</span>
+            <br>
+            <input type="checkbox" name="aceptar">
+            <span>Acepto haber leido y estar de acuerdo con la politica de privacidad y los terminos de uso</span>
+            <br>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Restablecer">
+        </form>
+    </main>
+    
+    <!-- Pie de pagina -->
+    <footer>
+        <ul>
+            <li>©2022 Todos los derechos reservados.</li>
+            <li>|</li>
+            <li>Politica de privacidad</li>
+            <li>|</li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </footer>
+    <!-- Fin pie de pagina -->
+
+
+</body>
+
+</html>
