@@ -175,6 +175,11 @@ footer ul li a:hover {
 .bio {
     text-align: justify;
     font-size: 29px;
+    /* Ajustar parrafo al responsive */
+    min-width: 30rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 40rem;
 }
 
 .imagenIndex {
@@ -182,6 +187,7 @@ footer ul li a:hover {
     max-width: 100%;
     height: auto;
     transition: all 2s;
+    padding-right: 1rem;
 }
 
 .imagenIndex:hover {
@@ -354,6 +360,11 @@ nav ul {
   margin: 1rem 1rem;
 }
 
+.bio {
+  min-width: 100%;
+  padding-right: 2rem;
+}
+
 .redesSociales {
   display: grid;
   grid-template-areas: 
@@ -506,11 +517,17 @@ nav ul {
   margin: 1rem 1rem;
 }
 
+.bio {
+  min-width: 100%;
+  padding-right: 2rem;
+}
+
 .redesSociales {
   display: grid;
   grid-template-areas: 
-  "red1 . red2 . red3"
-  ". red4 . red5 .";
+  "red1 . red2"
+  ". red3 ."
+  "red4 . red5";
   justify-content: center;
 }
 
