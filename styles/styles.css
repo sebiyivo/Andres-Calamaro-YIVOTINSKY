@@ -357,6 +357,15 @@ nav ul li {
   order: -1;
 }
 
+.contenidoDesplegable {
+  left: 0;
+  right: 0;
+}
+
+.contenidoDesplegable a {
+  border: #ad0c0c solid;
+}
+
 /* Index //////////////////////////////////////////////////////////////////// */
 
 .index {
@@ -524,6 +533,15 @@ nav ul li {
 
 .logoli {
   order: -1;
+}
+
+.contenidoDesplegable {
+  left: 0;
+  right: 0;
+}
+
+.contenidoDesplegable a {
+  border: #ad0c0c solid;
 }
 
 /* Index //////////////////////////////////////////////////////////////////// */
