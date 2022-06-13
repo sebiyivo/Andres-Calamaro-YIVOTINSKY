@@ -347,6 +347,11 @@ nav ul {
   position: relative;
 }
 
+nav ul li {
+  width: 100%;
+  text-align: center;
+  border: #ffffff solid;
+}
 
 .logoli {
   order: -1;
@@ -509,6 +514,12 @@ nav ul {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+nav ul li {
+  width: 100%;
+  text-align: center;
+  border: #ffffff solid;
 }
 
 .logoli {
