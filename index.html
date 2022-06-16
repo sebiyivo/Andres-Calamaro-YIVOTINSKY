@@ -18,10 +18,15 @@
            <!-- Barra de navegacion -->
         <nav class="row navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
             <!-- Enlaces de navegacion -->
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>    
+            <div class="container-fluid hamburguesa">
+                <div class="divHamburguesa">
+                    <a class="logo logoHamburguesa" href="./index.html">
+                    <img src="./assets/logoNegro.png" alt="Logo" title="Logo" height="50px" width="160px" />        
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button> 
+                </div>   
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item">
@@ -66,14 +71,14 @@
     <!-- Fin de la cabecera -->
    
     
-    <main class="container-fluid">
+    <main class="container">
       <div class="row">
         <!-- Titulo -->
         <h1>ANDRES CALAMARO</h1>        
         <!-- Fin titulo -->
         <!-- Resumen bio -->
         <div class="index">
-           <article class="bio">
+           <article class="bio col-md-6">
                <p>
                    Andrés Calamaro es un cantautor, músico, compositor y productor discográfico argentino, nacido en Buenos Aires, Argentina el 22 de agosto del año 1961.
                    Es considerado uno de los iconos del rock argentino por su actuación con "Los Abuelos de la Nada" y su prolífica carrera como solista, 
@@ -82,7 +87,9 @@
                </p>
            </article>
            <!-- Fin resumen bio -->
-           <img class="imagenIndex" src="./assets/imagenInicio.jpg" alt="Imagen Inicio" title="Imagen Inicio" height="500" width="500">
+           <div class="col-md-6">
+             <img class="imagenIndex" src="./assets/imagenInicio.jpg" alt="Imagen Inicio" title="Imagen Inicio" height="500" width="500">
+           </div>
         </div>
       
         <!-- Enlaces a redes sociales -->
