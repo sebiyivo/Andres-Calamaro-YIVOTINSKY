@@ -26,11 +26,9 @@
     box-sizing: border-box;
 }
 
-html {
+header, body, footer {
     font-family: 'Special Elite', cursive;
     color: #ffffff;
-    background-image: url("../assets/ImagenFondo.png");
-    background-color: #000000;
 }
 
 body {
@@ -38,12 +36,14 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 1.3fr auto 1fr;
   align-content: space-between;
+  background-image: url("../assets/ImagenFondo.png");
+  background-color: #000000;
 }
 
 h1 {
     text-align: center;
     text-shadow: 1px 1px 2px #020202, 0 0 25px #0000ff, 0 0 5px #00008b;
-    font-size: 4rem;
+    font-size: 5rem;
     padding-top: 2rem;
     padding-bottom: 3rem;
     animation: alejar 3s;
@@ -59,11 +59,16 @@ form {
     text-align: center;
 }
 
+.row {
+  width: 100%;
+}
+
 /* Navbar */
 
 .navbar {
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 nav ul {
@@ -71,9 +76,7 @@ nav ul {
     justify-content: space-evenly;
     align-items: flex-end;
     background-color: #000000;
-    /* position: fixed; */
     width: 100%;
-    /* z-index: 1; */
   }
 
 .nav-link {
@@ -91,9 +94,7 @@ nav ul {
 
 /* menu desplegable */
 
-
 .dropdown-menu {
-  background-color: #000000;
   z-index: 1;
 }
 
@@ -102,6 +103,7 @@ nav ul {
   font-size: 20px;
   text-align: center;
   color: #ffffff;
+  white-space: unset;
 }
 
 .dropdown-item:hover {
@@ -161,12 +163,13 @@ footer ul li a:hover {
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin: 0 15rem;
+    /* margin: 0 15rem; */
+    border: #fbff00 solid;
 }
 
 .bio {
     text-align: justify;
-    font-size: 29px;
+    font-size: 28px;
     /* Ajustar parrafo al responsive */
     min-width: 30rem;
     margin-left: 1rem;
@@ -198,15 +201,16 @@ footer ul li a:hover {
   height: 25px;
 }
 
-.conciertos input {
+.conciertos button {
   background: linear-gradient(to bottom, #ff0000, #ff0000af, #ff000044)
 }
 
-.conciertos input:hover {
+.conciertos button:hover {
   filter: saturate(150%);
 }
 
-.conciertos input:active {
+.conciertos button:active {
+  transform: scale(0.9);
   background: linear-gradient(to bottom, #ffffff, #a9a9a9af, #0000005f)
 }
 
@@ -316,6 +320,32 @@ h2 {
   margin: 2rem 0 0 0;
   text-align: center;    
 }
+
+/* contacto //////////////////////////////////////////////////////////////////// */
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  font-size: 1rem;
+  max-width: min-content;
+  background-color: #000000;
+  padding: 4rem;
+  border-radius: 2%;
+}
+
+form input, select option {
+  text-align: center;
+}
+
+label {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 2px #020202, 0 0 25px #ff0000, 0 0 5px #8b0000;
+}
+
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// T A B L E T ///////////////////////////////////////////////////////////////////////// */
