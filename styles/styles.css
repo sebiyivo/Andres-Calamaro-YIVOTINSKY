@@ -272,6 +272,7 @@ footer ul li a:hover {
 
 .modal-dialog {
   max-width: 80%;
+  background-color: #000000;
 }
 
 .modal-content{
@@ -564,6 +565,12 @@ label {
     .imagen12 { grid-area: 2 / 2 / 3 / 3; }
     .imagen13 { grid-area: 3 / 1 / 4 / 2; }
     .imagen14 { grid-area: 3 / 2 / 4 / 3; }
+
+    .modal.show {
+      display: flex !important;
+      justify-content: center; 
+      align-items: center;  
+    }
 
 /* videos //////////////////////////////////////////////////////////////////// */
 
