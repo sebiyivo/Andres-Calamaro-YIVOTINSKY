@@ -105,13 +105,21 @@
 
 @media screen and (max-width: 576px) {
 
-  .imagenes, .imagenes2 {
+  .imagenes {
     display: flex;
     flex-direction: column;
+    
+    &.imagenes2 {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  .modal-dialog {
-    max-width: 100%;
-  }
+  .modal {
 
+    .modal-dialog {
+      max-width: 100%;
+    }
+  }
+  
 }

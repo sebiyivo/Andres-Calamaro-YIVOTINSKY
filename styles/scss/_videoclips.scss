@@ -29,34 +29,38 @@
 
 @media screen and (max-width: 1200px) {
 
-  .video {
+  .parVideos {
+    
+    .video {
 
-    iframe {
-      height: 18rem;
-    }
-
-    h3 {
-      font-size: 3rem;
-    }
-
-  } 
-
+      iframe {
+        height: 18rem;
+      }
+  
+      h3 {
+        font-size: 3rem;
+      }
+  
+    } 
+  }
 }
 
 @media screen and (max-width: 992px) {
 
-  .video {
+  .parVideos {
+    
+    .video {
 
-    iframe {
-      height: 14rem;
-    }
-
-    h3 {
-      font-size: 2rem;
-    }
-
-  } 
-
+      iframe {
+        height: 13rem;
+      }
+  
+      h3 {
+        font-size: 2rem;
+      }
+  
+    } 
+  }
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -65,18 +69,20 @@
 
 @media screen and (max-width: 768px) {
 
-  .video {
+  .parVideos {
+    
+    .video {
 
-    iframe {
-      height: 20rem;
-    }
-
-    h3 {
-      font-size: 3rem;
-    }
-
-  } 
-
+      iframe {
+        height: 20rem;
+      }
+  
+      h3 {
+        font-size: 3rem;
+      }
+  
+    } 
+  }
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -85,16 +91,18 @@
 
 @media screen and (max-width: 576px) {
 
-  .video {
+  .parVideos {
+    
+    .video {
 
-    iframe {
-      height: 16rem;
-    }
-
-    h3 {
-      font-size: 2rem;
-    }
-
-  } 
-
+      iframe {
+        height: 16rem;
+      }
+  
+      h3 {
+        font-size: 2rem;
+      }
+  
+    } 
+  }
 }
