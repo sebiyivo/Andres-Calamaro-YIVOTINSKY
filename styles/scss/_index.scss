@@ -1,0 +1,138 @@
+.index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.bio {
+    text-align: justify;
+    font-size: 28px;
+}
+
+.imagenIndex {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    transition: all 2s;
+    padding-right: 1rem;
+    
+    &:hover {
+        transform: rotateY(180deg);
+    }
+}
+
+.redesSociales {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 3rem;
+    margin-top: 2rem;
+
+    img {
+        transition: all 1s;
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// T A B L E T ///////////////////////////////////////////////////////////////////////// *
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (max-width: 768px) {
+  
+  .index {
+    flex-flow: column wrap;
+  }
+  
+  .bio {
+    min-width: 100%;
+  }
+  
+  .imagenIndex {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  }
+  
+  .redesSociales {
+    display: grid;
+    grid-template-areas: 
+    "red1 . red2 . red3"
+    ". red4 . red5 .";
+    justify-content: center;
+    max-width: 100%;
+
+    img {
+      transform: scale(1.2);
+    }
+  }
+  
+  .red1 {
+    grid-area: red1;
+  }
+  
+  .red2 {
+    grid-area: red2;
+  }
+  
+  .red3 {
+    grid-area: red3;
+  }
+  
+  .red4 {
+    grid-area: red4;
+  }
+  
+  .red5 {
+    grid-area: red5;
+  }
+
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// M O B I L E //////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media screen and (max-width: 576px) {
+
+  .bio {
+    hyphens: auto;
+  }
+
+  .redesSociales {
+    display: grid;
+    grid-template-areas: 
+    "red1 . red2"
+    ". red3 ."
+    "red4 . red5";
+    justify-content: center;
+  }
+
+  .red1 {
+    grid-area: red1;
+  }
+
+  .red2 {
+    grid-area: red2;
+  }
+
+  .red3 {
+    grid-area: red3;
+  }
+
+  .red4 {
+    grid-area: red4;
+  }
+
+  .red5 {
+    grid-area: red5;
+  }
+
+}
+

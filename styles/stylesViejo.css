@@ -1,0 +1,709 @@
+/* general //////////////////////////////////////////////////////////////////// */
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes alejar {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, body, footer {
+    font-family: 'Special Elite', cursive;
+    color: #ffffff;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.3fr auto 1fr;
+  align-content: space-between;
+  background-image: url("../assets/ImagenFondo.png");
+  background-color: #000000;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px 2px #020202, 0 0 25px #0000ff, 0 0 5px #00008b;
+    font-size: 5rem;
+    font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    animation: alejar 3s;
+}
+
+main {
+    text-align: center;
+    padding: 2rem 0 6rem 0;
+    animation: aparecer 3s;
+}
+
+form {
+    text-align: center;
+}
+
+/* Navbar */
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    background-color: #000000;
+    width: 100%;
+  }
+
+.nav-link {
+    color: #ffffff;
+    font-size: 20px;
+    transition: 0.5s;
+  }
+  
+.nav-link:hover, .active {
+    color: #ad0c0c !important;
+    text-decoration: underline overline #ad0c0c;
+    transform: scale(1.2);
+  }
+
+.logo:hover {
+  transform: none;
+}  
+
+/* menu desplegable */
+
+.dropdown-menu {
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 0.5rem;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  white-space: unset;
+}
+
+.dropdown-item:hover {
+  text-decoration: none;
+  background: none;
+  color: #ffff00;
+}
+
+/* Fin navbar */
+
+/* Footer */
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 1.2rem;
+    gap: 2rem;
+    background-color: #252525;
+    margin-bottom: 0;
+  }
+  
+footer ul li {
+    color: #ffffff;
+    text-decoration: none;  
+  }
+
+footer ul li a {   
+    color: #fbff00;
+    text-decoration: none;
+  }
+
+footer ul li a:hover {   
+    text-decoration: underline;
+    color: #fbff00;
+  }  
+
+/* Index //////////////////////////////////////////////////////////////////// */
+
+.redesSociales {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.redesSociales img {
+  transition: all 1s;
+}
+
+.redesSociales img:hover {
+  transform: scale(1.5);
+}
+
+.index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.bio {
+    text-align: justify;
+    font-size: 28px;
+    /* Ajustar parrafo al responsive */
+    /* min-width: 30rem; */
+    /* margin-left: 1rem;
+    margin-right: 1rem; */
+    /* max-width: 40rem; */
+}
+
+.imagenIndex {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    transition: all 2s;
+    padding-right: 1rem;
+}
+
+.imagenIndex:hover {
+  transform: rotateY(180deg);
+}
+
+/* conciertos //////////////////////////////////////////////////////////////////// */
+
+.conciertos {
+    text-align: center;
+    font-size: 30px;
+}
+
+.conciertos img {
+  width: 35px;
+  height: 25px;
+}
+
+.conciertos button {
+  background: linear-gradient(to bottom, #ff0000, #ff0000af, #ff000044)
+}
+
+.conciertos button:hover {
+  filter: saturate(150%);
+}
+
+.conciertos button:active {
+  transform: scale(0.9);
+  background: linear-gradient(to bottom, #ffffff, #a9a9a9af, #0000005f)
+}
+
+/* imagenes //////////////////////////////////////////////////////////////////// */
+
+.imagenes {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px; 
+  }
+  
+.imagen1 { grid-area: 1 / 1 / 5 / 4; }
+.imagen2 { grid-area: 5 / 1 / 9 / 4; }
+.imagen3 { grid-area: 9 / 1 / 13 / 4; }
+.imagen4 { grid-area: 9 / 10 / 13 / 13; }
+.imagen5 { grid-area: 5 / 10 / 9 / 13; }
+.imagen6 { grid-area: 1 / 10 / 5 / 13; }
+.imagen7 { grid-area: 1 / 4 / 7 / 10; }
+.imagen8 { grid-area: 7 / 4 / 13 / 10; }
+
+.imagenes2 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-top: 20px;
+  }
+  
+  .imagen9 { grid-area: 1 / 1 / 6 / 5; }
+  .imagen10 { grid-area: 1 / 9 / 6 / 13; }
+  .imagen11 { grid-area: 6 / 1 / 13 / 5; }
+  .imagen12 { grid-area: 6 / 9 / 13 / 13; }
+  .imagen13 { grid-area: 1 / 5 / 8 / 9; }
+  .imagen14 { grid-area: 8 / 5 / 13 / 9; }
+
+.imagen {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 1s;
+}
+
+.imagen:hover {
+  filter: blur(3px);
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.btn-close {
+  position: absolute;
+  cursor: pointer;
+  font-size: 2rem;
+  right: 0;
+}
+
+.modal-dialog {
+  max-width: 80%;
+  background-color: #000000;
+}
+
+.modal-content{
+  border: #000000 solid 10px;
+  border-radius: 0;
+}
+
+/* videos //////////////////////////////////////////////////////////////////// */
+
+.video {
+  text-align: center;
+}
+
+.video iframe {
+  border-radius: 10px;
+  width: 100%;
+  height: 25rem;
+}
+
+h3 {
+  text-shadow: 1px 1px 2px #020202, 0 0 25px #ff0000, 0 0 5px #8b0000;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 4rem;
+}
+
+.parVideos {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+/* albumes //////////////////////////////////////////////////////////////////// */
+
+.albumes div img {
+  border-radius: 12px;
+  width: 100%;
+  transition: all 1s;
+}
+
+.albumes div img:hover {
+  filter: saturate(200%);
+}
+
+.albumes div iframe {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  text-shadow: 1px 1px 2px #020202, 0 0 25px #ff0000, 0 0 5px #8b0000;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: left ;
+  margin-bottom: 0 !important;
+  margin-top: 3rem !important;    
+}
+
+/* contacto //////////////////////////////////////////////////////////////////// */
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  font-size: 1rem;
+  width: min-content;
+  max-width: 100%;
+  background-color: #000000;
+  padding: 4rem;
+  border-radius: 2%;
+}
+
+textarea {
+  max-width: 100%;
+  border-radius: 2%;
+  padding: 1rem;
+}
+
+form input, select option {
+  text-align: center;
+}
+
+label {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 2px #020202, 0 0 25px #ff0000, 0 0 5px #8b0000;
+}
+
+.btn-enviar {
+  background: linear-gradient(to bottom, #0000ff, #1100ffaf, #0000ff44);
+  color: #ffffff;
+}
+
+.btn-restablecer {
+  background: linear-gradient(to bottom, #9d9999, #4d4d50af, #1b1b1c44);
+  color: #ffffff;
+}
+
+.btn-enviar:active, .btn-restablecer:active {
+  transform: scale(0.9);
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////// R E S P O N S I V E - G E N E R A L ////////////////////////////////////////////////////////// *
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (max-width: 1200px) {
+
+  h2, h3 {
+    font-size: 3rem;
+  }
+
+/* videos //////////////////////////////////////////////////////////////////// */
+
+  .video iframe {
+    height: 18rem;
+  }
+}
+
+@media screen and (min-width: 993px) {
+
+  .divHamburguesa {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  h2, h3 {
+    font-size: 2rem;
+  }
+  
+  nav ul {
+    align-items: center;
+  }
+  
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    border: #ffffff solid;
+  }
+
+  .dropdown-menu {
+    padding: 0;
+  }
+
+  .dropdown-menu li {
+    border: #ff4242 solid;
+  }
+
+  .navbar-toggler {
+    padding: 0;
+    font-size: 1rem;
+  }
+  
+  .logoli {
+    display: none;
+  }
+
+  .hamburguesa {
+    justify-content: center !important;
+  }
+
+  .divHamburguesa {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+/* videos //////////////////////////////////////////////////////////////////// */
+
+  .video iframe {
+    height: 14rem;
+  }
+
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// T A B L E T ///////////////////////////////////////////////////////////////////////// *
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (max-width: 768px) {
+
+  body {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto auto;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-top: 6rem !important;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  h2, h3 {
+    font-size: 3rem;
+  }
+
+  footer ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+/* Index //////////////////////////////////////////////////////////////////// */
+
+  .index {
+    flex-flow: column wrap;
+  }
+
+  .bio {
+    min-width: 100%;
+  }
+
+  .imagenIndex {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  }
+
+  .redesSociales {
+    display: grid;
+    grid-template-areas: 
+    "red1 . red2 . red3"
+    ". red4 . red5 .";
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .red1 {
+    grid-area: red1;
+  }
+
+  .red2 {
+    grid-area: red2;
+  }
+
+  .red3 {
+    grid-area: red3;
+  }
+
+  .red4 {
+    grid-area: red4;
+  }
+
+  .red5 {
+    grid-area: red5;
+  }
+
+  .redesSociales img {
+    transform: scale(1.2);
+  }
+      
+/* imagenes //////////////////////////////////////////////////////////////////// */
+
+  .imagenes {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    }
+
+  .imagen1 { grid-area: 1 / 1 / 2 / 2; }
+  .imagen2 { grid-area: 1 / 2 / 2 / 3; }
+  .imagen3 { grid-area: 2 / 1 / 3 / 2; }
+  .imagen4 { grid-area: 2 / 2 / 3 / 3; }
+  .imagen5 { grid-area: 3 / 1 / 4 / 2; }
+  .imagen6 { grid-area: 3 / 2 / 4 / 3; }
+  .imagen7 { grid-area: 4 / 1 / 5 / 2; }
+  .imagen8 { grid-area: 4 / 2 / 5 / 3; }
+
+  .imagenes2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    margin-top: 20px;
+    }
+    
+    .imagen9 { grid-area: 1 / 1 / 2 / 2; }
+    .imagen10 { grid-area: 1 / 2 / 2 / 3; }
+    .imagen11 { grid-area: 2 / 1 / 3 / 2; }
+    .imagen12 { grid-area: 2 / 2 / 3 / 3; }
+    .imagen13 { grid-area: 3 / 1 / 4 / 2; }
+    .imagen14 { grid-area: 3 / 2 / 4 / 3; }
+
+    .modal.show {
+      display: flex !important;
+      justify-content: center; 
+      align-items: center;  
+    }
+
+/* videos //////////////////////////////////////////////////////////////////// */
+
+  .video iframe {
+    height: 20rem;
+  }
+  
+/* albumes //////////////////////////////////////////////////////////////////// */
+
+  .albumes div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .albumes div img {
+    width: 100%;
+    height: auto;
+  }
+
+  .albumes div iframe {
+    width: 100%;
+    height: 30rem;
+  }
+
+/* conciertos //////////////////////////////////////////////////////////////////// */
+
+  .conciertos {
+    width: 100%;
+  }
+
+/* contacto //////////////////////////////////////////////////////////////////// */
+
+  .formulario {
+    width: 100%;
+    height: auto;
+  }
+
+  .form {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// M O B I L E //////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (max-width: 576px) {
+
+  h2, h3 {
+    font-size: 2rem;
+  }  
+
+/* Index //////////////////////////////////////////////////////////////////// */
+
+  .bio {
+    hyphens: auto;
+  }
+
+  .redesSociales {
+    display: grid;
+    grid-template-areas: 
+    "red1 . red2"
+    ". red3 ."
+    "red4 . red5";
+    justify-content: center;
+  }
+
+  .red1 {
+    grid-area: red1;
+  }
+
+  .red2 {
+    grid-area: red2;
+  }
+
+  .red3 {
+    grid-area: red3;
+  }
+
+  .red4 {
+    grid-area: red4;
+  }
+
+  .red5 {
+    grid-area: red5;
+  }
+
+/* imagenes //////////////////////////////////////////////////////////////////// */
+
+  .imagenes, .imagenes2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+  }
+
+/* videos //////////////////////////////////////////////////////////////////// */
+
+  .video iframe {
+    height: 16rem;
+  }
+  
+/* albumes //////////////////////////////////////////////////////////////////// */
+
+
+
+/* conciertos //////////////////////////////////////////////////////////////////// */
+
+  .fechasDeConciertos {
+    font-size: 3.5rem;
+  }
+
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (max-width: 390px) {
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  /* conciertos //////////////////////////////////////////////////////////////////// */
+
+  .fechasDeConciertos {
+    font-size: 2.5rem;
+  }
+
+}
+
