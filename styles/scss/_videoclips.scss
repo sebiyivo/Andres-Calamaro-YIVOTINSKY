@@ -1,26 +1,26 @@
-.video {
-    text-align: center;
-
-    iframe {
-        border-radius: 10px;
-        width: 100%;
-        height: 25rem;
-    }
-}
-    
-h3 {
-    text-shadow: 1px 1px 2px #020202, 0 0 25px #ff0000, 0 0 5px #8b0000;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 0;
-    margin-top: 4rem;
-}
-
 .parVideos {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 0;
+
+    .video {
+      text-align: center;
+  
+      iframe {
+          border-radius: 10px;
+          width: 100%;
+          height: 25rem;
+      }
+
+      h3 {
+        text-shadow: $neonRojo;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 0;
+        margin-top: 4rem;
+      }
+    }
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -29,25 +29,33 @@ h3 {
 
 @media screen and (max-width: 1200px) {
 
-  h3 {
-    font-size: 3rem;
-  }
+  .video {
 
-  .video iframe {
-    height: 18rem;
-  }
+    iframe {
+      height: 18rem;
+    }
+
+    h3 {
+      font-size: 3rem;
+    }
+
+  } 
 
 }
 
 @media screen and (max-width: 992px) {
 
-  h3 {
-    font-size: 2rem;
-  }
+  .video {
 
-  .video iframe {
-    height: 14rem;
-  }
+    iframe {
+      height: 14rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+  } 
 
 }
 
@@ -57,16 +65,17 @@ h3 {
 
 @media screen and (max-width: 768px) {
 
-  h3 {
-      font-size: 3rem;
-    }
-
   .video {
 
     iframe {
-        height: 20rem;
+      height: 20rem;
     }
-  }
+
+    h3 {
+      font-size: 3rem;
+    }
+
+  } 
 
 }
 
@@ -76,15 +85,16 @@ h3 {
 
 @media screen and (max-width: 576px) {
 
-  h3 {
-      font-size: 2rem;
-  } 
-
   .video {
 
     iframe {
-        height: 16rem;
+      height: 16rem;
     }
-  }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+  } 
 
 }
