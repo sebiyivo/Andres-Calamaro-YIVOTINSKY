@@ -1,7 +1,7 @@
 .albumes {
 
     h2 {
-      text-shadow: $neonRojo;
+      text-shadow: map-get($neon, neonRojo);
       font-size: 4rem;
       font-weight: bold;
       text-align: left ;
@@ -71,10 +71,7 @@
     }
 
     div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flex(column, center, center);
         gap: 5px;
 
         img {
