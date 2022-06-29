@@ -26,7 +26,7 @@
 
 header, body, footer {
     font-family: 'Special Elite', cursive;
-    color: #ffffff;
+    color: $colorLetra;
 }
 
 body {
@@ -69,7 +69,7 @@ main {
     .nav-item {
       
       .nav-link {
-        color: #ffffff;
+        color: $colorLetra;
         font-size: 20px;
         transition: 0.5s;
         
@@ -95,7 +95,7 @@ main {
           padding: 0.5rem;
           font-size: 20px;
           text-align: center;
-          color: #ffffff;
+          color: $colorLetra;
           white-space: unset;
       
           &:hover {
@@ -126,7 +126,7 @@ footer {
         margin-bottom: 0;
 
         li {
-            color: #ffffff;
+            color: $colorLetra;
             text-decoration: none;
 
             a {
@@ -175,7 +175,8 @@ footer {
     }
 
     .navbar-nav {
-      align-items: center;
+      @include flex(column, center, center);
+      // align-items: center;
 
       .nav-item {
         width: 100%;
