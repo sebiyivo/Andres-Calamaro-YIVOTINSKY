@@ -118,8 +118,7 @@ footer {
 
     ul {
         list-style-type: none;
-        display: flex;
-        justify-content: center;
+        @include flex(row, center, center);
         padding: 1.2rem;
         gap: 2rem;
         background-color: #252525;
@@ -163,8 +162,7 @@ footer {
       justify-content: center !important;
   
       .divHamburguesa {
-        display: flex;
-        flex-direction: column;
+        @include flex(column, center, unset);
         gap: 10px;
 
         .navbar-toggler {
@@ -176,7 +174,6 @@ footer {
 
     .navbar-nav {
       @include flex(column, center, center);
-      // align-items: center;
 
       .nav-item {
         width: 100%;
@@ -218,8 +215,7 @@ footer {
   }
 
   footer ul {
-    flex-direction: column;
-    align-items: center;
+    @include flex(column, center, center);
     gap: 0.5rem;
   }
 

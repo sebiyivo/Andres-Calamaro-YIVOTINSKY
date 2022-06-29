@@ -22,8 +22,7 @@
 
 .redesSociales {
     list-style-type: none;
-    display: flex;
-    justify-content: center;
+    @include flex(row, center, center);
     padding: 2rem;
     gap: 3rem;
     margin-top: 2rem;

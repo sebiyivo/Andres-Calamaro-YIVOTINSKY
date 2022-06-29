@@ -106,12 +106,11 @@
 @media screen and (max-width: 576px) {
 
   .imagenes {
-    display: flex;
-    flex-direction: column;
+    @include flex(column, center, center);
     
     &.imagenes2 {
-      display: flex;
-      flex-direction: column;
+    @include flex(column, center, center);
+     
     }
   }
 
