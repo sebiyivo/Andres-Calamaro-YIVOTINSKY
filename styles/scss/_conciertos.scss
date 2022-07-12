@@ -1,6 +1,9 @@
 .conciertos {
+
+  .concierto {
     text-align: center;
     font-size: 30px;
+    margin-bottom: 3rem;
 
     img {
         width: 35px;
@@ -19,6 +22,8 @@
             background: linear-gradient(to bottom, #ffffff, #a9a9a9af, #0000005f)
         }
     }
+  }
+    
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

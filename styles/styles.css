@@ -155,6 +155,7 @@ footer ul li a:hover {
   }
   .navbar .navbar-nav .nav-item .dropdown-menu {
     padding: 0;
+    background-color: #000000;
   }
   .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item {
     border: #ff4242 solid;
@@ -369,21 +370,22 @@ footer ul li a:hover {
     font-size: 2rem;
   }
 }
-.conciertos {
+.conciertos .concierto {
   text-align: center;
   font-size: 30px;
+  margin-bottom: 3rem;
 }
-.conciertos img {
+.conciertos .concierto img {
   width: 35px;
   height: 25px;
 }
-.conciertos button {
+.conciertos .concierto button {
   background: linear-gradient(to bottom, #ff0000, rgba(255, 0, 0, 0.6862745098), rgba(255, 0, 0, 0.2666666667));
 }
-.conciertos button:hover {
+.conciertos .concierto button:hover {
   filter: saturate(150%);
 }
-.conciertos button:active {
+.conciertos .concierto button:active {
   transform: scale(0.9);
   background: linear-gradient(to bottom, #ffffff, rgba(169, 169, 169, 0.6862745098), rgba(0, 0, 0, 0.3725490196));
 }
