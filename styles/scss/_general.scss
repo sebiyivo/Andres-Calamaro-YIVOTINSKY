@@ -60,6 +60,7 @@ main {
   position: fixed;
   width: 100%;
   z-index: 1;
+  background-color: #000000;
 
   .navbar-nav {
     @include flex(row, space-evenly, flex-end);
@@ -89,6 +90,7 @@ main {
       }
 
       .dropdown-menu {
+        background-color: #000000;
         z-index: 1;
 
         .dropdown-item {
