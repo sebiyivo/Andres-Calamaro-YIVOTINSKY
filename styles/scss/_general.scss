@@ -99,11 +99,22 @@ main {
           text-align: center;
           color: $colorLetra;
           white-space: unset;
-      
+          transition: 0.5s;
+  
           &:hover {
               text-decoration: none;
               background: none;
               color: #ffff00;
+          }
+
+          &.itemTienda {
+            color: #00fff7;
+            font-size: 25px;
+            font-weight: bolder;
+
+            &:hover {
+              transform: scale(1.3);
+            }
           }
         }
       }

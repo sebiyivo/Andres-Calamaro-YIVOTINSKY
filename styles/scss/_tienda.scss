@@ -1,0 +1,63 @@
+.lineaTienda {
+    margin-right: 0;
+    margin-left: 0;
+
+    .card {
+        --bs-card-bg: none;
+        border-color: #0000ff solid;
+    
+        .card-img-top {
+    
+        }
+    
+        .card-body {
+            background-color: black;
+    
+            .card-title {
+                font-size: 2rem;
+                font-weight: bolder;
+                text-shadow: map-get($neon, neonRojo);
+            }
+    
+            .card-text {
+                font-size: 1.5rem;
+            }
+    
+            .botonAgregar {
+                background: linear-gradient(to bottom, #0000ff, #1100ffaf, #0000ff44);
+                color: #ffffff;
+            
+                &:active {
+                    transform: scale(0.9);
+                    background: linear-gradient(to bottom, #ffffff, #8b8b8baf, #00000044);
+                }
+            }
+        }
+    }
+
+}
+
+.iconoCarrito {
+    position:fixed;
+    bottom:1rem;
+    right:1rem;
+
+    img {
+        width: 6rem;
+    }
+}
+
+.iconoCantidadCarrito {
+    position:fixed;
+    width:2.2rem;
+    height:2.2rem;
+    bottom:5.1rem;
+    right:2.6rem;
+    background-color:#d32525;
+    color:#FFF;
+    border-radius:50px;
+    text-decoration: none;
+    font-size:1.5rem;
+    z-index:1;
+  }
+
