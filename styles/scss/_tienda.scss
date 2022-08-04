@@ -1,6 +1,7 @@
 .lineaTienda {
     margin-right: 0;
     margin-left: 0;
+    margin-bottom: 2rem;
 
     .card {
         --bs-card-bg: none;
@@ -12,6 +13,7 @@
     
         .card-body {
             background-color: black;
+            flex: none;
     
             .card-title {
                 font-size: 2rem;
@@ -26,6 +28,7 @@
             .botonAgregar {
                 background: linear-gradient(to bottom, #0000ff, #1100ffaf, #0000ff44);
                 color: #ffffff;
+                max-width: 100%;
             
                 &:active {
                     transform: scale(0.9);
@@ -53,11 +56,50 @@
     height:2.2rem;
     bottom:5.1rem;
     right:2.6rem;
+    padding-top: 5.5px;
     background-color:#d32525;
     color:#FFF;
     border-radius:50px;
     text-decoration: none;
-    font-size:1.5rem;
+    font-size:1rem;
     z-index:1;
+    border: #ffff00 solid;
+
+    &:hover {
+        color:#FFF;
+    }
   }
 
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// T A B L E T ///////////////////////////////////////////////////////////////////////// *
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (min-width: 768px) and (max-width: 970px) {
+
+    .lineaTienda {
+        
+        .card {
+            
+            .card-body {
+                
+                .botonAgregar {
+                    font-size: 0.6rem;          
+                    
+                 }
+            }
+    
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+  .lineaTienda {
+  
+      .card {
+        margin-bottom: 2rem;
+
+        }
+    }
+}    

@@ -163,6 +163,7 @@ footer ul li a:hover {
     width: 100%;
     text-align: center;
     border: #ffffff solid;
+    padding-top: 3px;
   }
   .navbar .navbar-nav .nav-item .dropdown-menu {
     padding: 0;
@@ -170,6 +171,7 @@ footer ul li a:hover {
   }
   .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item {
     border: #ff4242 solid;
+    padding-top: 12px;
   }
   .navbar .navbar-nav .logoli {
     display: none;
@@ -709,6 +711,7 @@ footer ul li a:hover {
 .lineaTienda {
   margin-right: 0;
   margin-left: 0;
+  margin-bottom: 2rem;
 }
 .lineaTienda .card {
   --bs-card-bg: none;
@@ -716,6 +719,7 @@ footer ul li a:hover {
 }
 .lineaTienda .card .card-body {
   background-color: black;
+  flex: none;
 }
 .lineaTienda .card .card-body .card-title {
   font-size: 2rem;
@@ -728,6 +732,7 @@ footer ul li a:hover {
 .lineaTienda .card .card-body .botonAgregar {
   background: linear-gradient(to bottom, #0000ff, rgba(17, 0, 255, 0.6862745098), rgba(0, 0, 255, 0.2666666667));
   color: #ffffff;
+  max-width: 100%;
 }
 .lineaTienda .card .card-body .botonAgregar:active {
   transform: scale(0.9);
@@ -749,12 +754,31 @@ footer ul li a:hover {
   height: 2.2rem;
   bottom: 5.1rem;
   right: 2.6rem;
+  padding-top: 5.5px;
   background-color: #d32525;
   color: #FFF;
   border-radius: 50px;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   z-index: 1;
+  border: #ffff00 solid;
+}
+.iconoCantidadCarrito:hover {
+  color: #FFF;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// T A B L E T ///////////////////////////////////////////////////////////////////////// *
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+@media only screen and (min-width: 768px) and (max-width: 970px) {
+  .lineaTienda .card .card-body .botonAgregar {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lineaTienda .card {
+    margin-bottom: 2rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
