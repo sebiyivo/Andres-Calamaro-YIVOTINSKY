@@ -45,11 +45,38 @@ table {
                     width: 3.5rem;
                     color: $colorLetra;
                     background-color: #484848;
-                    padding-left: 0.3rem;
-                    padding-top: 0.2rem;
+                    padding-left: 1.2rem;
+                    padding-top: 0.3rem;
+
+                    &:hover {
+                        padding-left: 0.3rem;
+                        padding-top: 0.3rem;
+                    }
                 }
 
             }
+        }
+    }
+}
+
+.calculo {
+
+    border-bottom: #ffffff solid;
+    border-top: #ffffff solid;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+
+    ul {
+
+        list-style-type: none;
+        @include flex(row, right, center);
+        gap: 3rem;
+        margin-top: 1rem;
+
+        li {
+
+            font-size: 1.5rem;
+            
         }
     }
 }

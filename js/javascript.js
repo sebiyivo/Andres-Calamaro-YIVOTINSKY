@@ -37,6 +37,24 @@ class Carrito {
         this.cantidadItems = 0
         this.discos = []
     }
+
+    vaciarCarrito () {
+
+        const cantidades = document.getElementsByClassName("cantidad")
+        cantidades.innerHTML = 0
+
+        const subtotal = document.getElementById("subtotal")
+        const iva = document.getElementById("iva")
+        const total = document.getElementById("total")
+
+        subtotal.innerHTML = "$ 0,00"
+        iva.innerHTML = "$ 0,00"
+        total.innerHTML = "$ 0,00"
+
+        const productosCarrito = document.querySelector("tbody tr")
+        productosCarrito.remove()
+
+    }
     
 }
 

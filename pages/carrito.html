@@ -94,28 +94,43 @@
                 <th scope="row"><img src="../assets/diosLosCria.jpg" alt="Dios los cria"></th>
                 <td>Dios los cria</td>
                 <td>$ 4.000,00</td>
-                <td><input class="cantidad" type="number" value="cantidad"></td>
+                <td><input class="cantidad" type="number" value="cantidad" min="1" max="99"></td>
                 <td>$ 12.000,00</td>
-                <td><input class="btn botonEliminar" type="submit" value="Eliminar" min="1" max="99"></td>
+                <td><input class="btn botonEliminar" type="submit" value="Eliminar" ></td>
               </tr>
               <tr>
                 <th scope="row"><img src="../assets/cargarLaSuerte.jpg" alt="Cargar la suerte"></th>
                 <td>Cargar la suerte</td>
                 <td>$ 4.000,00</td>
-                <td><input class="cantidad" type="number" value="cantidad"></td>
+                <td><input class="cantidad" type="number" value="cantidad" min="1" max="99"></td>
                 <td>$ 12.000,00</td>
-                <td><input class="btn botonEliminar" type="submit" value="Eliminar" min="1" max="99"></td>
+                <td><input class="btn botonEliminar" type="submit" value="Eliminar" ></td>
               </tr>
               <tr>
                 <th scope="row"><img src="../assets/bohemio.png" alt="Bohemio"></th>
                 <td>Bohemio</td>
                 <td>$ 4.000,00</td>
-                <td><input class="cantidad" type="number" value="cantidad"></td>
+                <td><input class="cantidad" type="number" value="cantidad" min="1" max="99"></td>
                 <td>$ 12.000,00</td>
-                <td><input class="btn botonEliminar" type="submit" value="Eliminar" min="1" max="99"></td>
+                <td><input class="btn botonEliminar" type="submit" value="Eliminar"></td>
               </tr>
             </tbody>
           </table>
+
+          <div class="calculo">
+            <ul>
+              <li id="subtotal">$ 36.000,00</li>
+              <li>Subtotal</li>
+            </ul>
+            <ul>
+              <li id="iva">$ 7.560,00</li>
+              <li>IVA %21</li>
+            </ul>
+            <ul>
+              <li id="total">$ 43.560,00</li>
+              <li>TOTAL</li>
+            </ul>
+          </div>
           
           <div class="botonesCarrito">
             <input class="btn botonVaciarCarrito" type="submit" value="Vaciar Carrito">

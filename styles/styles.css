@@ -802,8 +802,31 @@ table tbody tr td .cantidad {
   width: 3.5rem;
   color: #ffffff;
   background-color: #484848;
+  padding-left: 1.2rem;
+  padding-top: 0.3rem;
+}
+table tbody tr td .cantidad:hover {
   padding-left: 0.3rem;
-  padding-top: 0.2rem;
+  padding-top: 0.3rem;
+}
+
+.calculo {
+  border-bottom: #ffffff solid;
+  border-top: #ffffff solid;
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+}
+.calculo ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+.calculo ul li {
+  font-size: 1.5rem;
 }
 
 .botonesCarrito {
