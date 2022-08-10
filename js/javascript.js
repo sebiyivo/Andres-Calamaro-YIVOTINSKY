@@ -1,7 +1,7 @@
 class Disco {
     constructor(nombre, precio) {
         this.nombre = nombre.toUpperCase()
-        this.precio = this.precioConIva()
+        this.precio = precioConIva()
         this.vendido = false
     }
 
@@ -10,9 +10,6 @@ class Disco {
         return precioConIva
     }
 
-    // comprar() {
-    //     this.vendido = true
-    // }
 }
 
 class Carrito {
@@ -23,9 +20,13 @@ class Carrito {
     }
 
     agregarAlCarrito (Disco) {
-        this.valorTotal += Disco.precio
-        this.cantidadItems++
-        this.discos.push(Disco)
+ 
+        if (!this.discos.includes(Disco)) {
+
+            this.valorTotal += Disco.precio
+            this.cantidadItems++
+            this.discos.push(Disco)
+        }  
     }
 
     comprar () {

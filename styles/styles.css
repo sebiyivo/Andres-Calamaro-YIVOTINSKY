@@ -780,5 +780,54 @@ footer ul li a:hover {
     margin-bottom: 2rem;
   }
 }
+table tbody {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+table tbody tr th img {
+  width: 6rem;
+}
+table tbody tr td {
+  vertical-align: middle;
+}
+table tbody tr td .botonEliminar {
+  background: linear-gradient(to bottom, #ff0000, rgba(255, 0, 0, 0.6862745098), rgba(255, 0, 0, 0.2666666667));
+  color: #ffffff;
+}
+table tbody tr td .botonEliminar:active {
+  transform: scale(0.9);
+  background: linear-gradient(to bottom, #ffffff, rgba(169, 169, 169, 0.6862745098), rgba(0, 0, 0, 0.3725490196));
+}
+table tbody tr td .cantidad {
+  width: 3.5rem;
+  color: #ffffff;
+  background-color: #484848;
+  padding-left: 0.3rem;
+  padding-top: 0.2rem;
+}
+
+.botonesCarrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+.botonesCarrito .botonVaciarCarrito {
+  background: linear-gradient(to bottom, #0008ff, rgba(13, 0, 255, 0.6862745098), rgba(0, 0, 255, 0.2666666667));
+  color: #ffffff;
+  margin-right: 1rem;
+}
+.botonesCarrito .botonVaciarCarrito:active {
+  transform: scale(0.9);
+}
+.botonesCarrito .botonComprar {
+  background: linear-gradient(to bottom, #00ff00, rgba(21, 255, 0, 0.6862745098), rgba(21, 255, 0, 0.2666666667));
+  color: #ffffff;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+.botonesCarrito .botonComprar:active {
+  transform: scale(0.9);
+}
 
 /*# sourceMappingURL=styles.css.map */

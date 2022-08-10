@@ -1,0 +1,86 @@
+table {
+
+    thead {  
+
+        tr {
+
+            th {
+
+            }
+        }
+    }
+
+    tbody {
+
+        color: $colorLetra;
+        font-size: 1.5rem;
+
+        tr {
+
+            th {
+
+                img {
+                    width: 6rem;
+                }
+
+            }
+
+            td {
+
+                vertical-align: middle;
+
+                .botonEliminar {
+
+                    background: linear-gradient(to bottom, #ff0000, #ff0000af, #ff000044);
+                    color: $colorLetra;
+                
+                    &:active {
+                        transform: scale(0.9);
+                        background: linear-gradient(to bottom, #ffffff, #a9a9a9af, #0000005f)
+                    }
+                }
+
+                .cantidad {
+
+                    width: 3.5rem;
+                    color: $colorLetra;
+                    background-color: #484848;
+                    padding-left: 0.3rem;
+                    padding-top: 0.2rem;
+                }
+
+            }
+        }
+    }
+}
+
+.botonesCarrito {
+
+    @include flex(row, right, center);
+
+    .botonVaciarCarrito {
+
+        background: linear-gradient(to bottom, #0008ff, #0d00ffaf, #0000ff44);
+        color: $colorLetra;
+        margin-right: 1rem;
+    
+        &:active {
+            transform: scale(0.9);
+        }
+    
+    }
+    
+    .botonComprar {
+    
+        background: linear-gradient(to bottom, #00ff00, #15ff00af, #15ff0044);
+        color: $colorLetra;
+        font-weight: bolder;
+        font-size: 1.2rem;
+    
+        &:active {
+            transform: scale(0.9);
+        }
+    
+    }
+}
+
