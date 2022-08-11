@@ -726,8 +726,11 @@ footer ul li a:hover {
   font-weight: bolder;
   text-shadow: 1px 1px 2px #020202, 0 0 25px #ff0000, 0 0 5px #8b0000;
 }
-.lineaTienda .card .card-body .card-text {
+.lineaTienda .card .card-body .card-text, .lineaTienda .card .card-body .card-price {
   font-size: 1.5rem;
+}
+.lineaTienda .card .card-body .card-price {
+  color: #adff2f;
 }
 .lineaTienda .card .card-body .botonAgregar {
   background: linear-gradient(to bottom, #0000ff, rgba(17, 0, 255, 0.6862745098), rgba(0, 0, 255, 0.2666666667));

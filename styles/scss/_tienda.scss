@@ -24,6 +24,13 @@
             .card-text {
                 font-size: 1.5rem;
             }
+
+            .card-price {
+
+                @extend .card-text;
+                color: #adff2f;
+                
+            }
     
             .botonAgregar {
                 background: linear-gradient(to bottom, #0000ff, #1100ffaf, #0000ff44);
