@@ -1,13 +1,8 @@
 class Disco {
     constructor(nombre, precio) {
         this.nombre = nombre.toUpperCase()
-        this.precio = precioConIva()
+        this.precio = precio * 1.21
         this.vendido = false
-    }
-
-    precioConIva() {
-        let precioConIva = parseFloat(precio) * 1.21
-        return precioConIva
     }
 
 }
@@ -59,61 +54,25 @@ class Carrito {
 }
 
 
+// /////////////////////////////////////////
 
+const nombre1 = prompt("Ingresa nombre del primer disco")
+const precio1 = parseInt(prompt("Ingresa precio del primer disco")) 
+const nombre2 = prompt("Ingresa nombre del segundo disco")
+const precio2 = parseInt(prompt("Ingresa precio del segundo disco")) 
+const nombre3 = prompt("Ingresa nombre del tercer disco")
+const precio3 = parseInt(prompt("Ingresa precio del tercer disco")) 
 
+const disco1 = new Disco(nombre1,precio1);
+const disco2 = new Disco(nombre2,precio2);
+const disco3 = new Disco(nombre3,precio3);
 
+const carrito = new Carrito
+carrito.agregarAlCarrito(disco1)
+carrito.agregarAlCarrito(disco2)
+carrito.agregarAlCarrito(disco3)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+alert("EL VALOR TOTAL POR LOS 3 DISCOS ES $" + carrito.valorTotal)
 
 
 // const calcularEdadPromedio = (aniosTotales , cantPersonas) => aniosTotales / cantPersonas
