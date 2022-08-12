@@ -804,14 +804,14 @@ table tbody tr td .botonEliminar:active {
   background: linear-gradient(to bottom, #ffffff, rgba(169, 169, 169, 0.6862745098), rgba(0, 0, 0, 0.3725490196));
 }
 table tbody tr td .cantidad {
-  width: 3.5rem;
+  width: 4rem;
   color: #ffffff;
   background-color: #484848;
-  padding-left: 1.2rem;
+  padding-left: 1rem;
   padding-top: 0.3rem;
 }
 table tbody tr td .cantidad:hover {
-  padding-left: 0.3rem;
+  padding-left: 0.5rem;
   padding-top: 0.3rem;
 }
 
@@ -840,8 +840,16 @@ table tbody tr td .cantidad:hover {
   justify-content: right;
   align-items: center;
 }
-.botonesCarrito .botonVaciarCarrito {
+.botonesCarrito .botonVolverALaTienda {
   background: linear-gradient(to bottom, #0008ff, rgba(13, 0, 255, 0.6862745098), rgba(0, 0, 255, 0.2666666667));
+  color: #ffffff;
+  margin-right: 1rem;
+}
+.botonesCarrito .botonVolverALaTienda:active {
+  transform: scale(0.9);
+}
+.botonesCarrito .botonVaciarCarrito {
+  background: linear-gradient(to bottom, #ff9500, rgba(255, 157, 0, 0.6862745098), rgba(255, 157, 0, 0.2666666667));
   color: #ffffff;
   margin-right: 1rem;
 }

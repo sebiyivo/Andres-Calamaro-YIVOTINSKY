@@ -42,14 +42,14 @@ table {
 
                 .cantidad {
 
-                    width: 3.5rem;
+                    width: 4rem;
                     color: $colorLetra;
                     background-color: #484848;
-                    padding-left: 1.2rem;
+                    padding-left: 1rem;
                     padding-top: 0.3rem;
 
                     &:hover {
-                        padding-left: 0.3rem;
+                        padding-left: 0.5rem;
                         padding-top: 0.3rem;
                     }
                 }
@@ -85,9 +85,21 @@ table {
 
     @include flex(row, right, center);
 
-    .botonVaciarCarrito {
+    .botonVolverALaTienda {
 
         background: linear-gradient(to bottom, #0008ff, #0d00ffaf, #0000ff44);
+        color: $colorLetra;
+        margin-right: 1rem;
+    
+        &:active {
+            transform: scale(0.9);
+        }
+
+    }
+
+    .botonVaciarCarrito {
+
+        background: linear-gradient(to bottom, #ff9500, #ff9d00af, #ff9d0044);
         color: $colorLetra;
         margin-right: 1rem;
     
