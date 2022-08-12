@@ -132,6 +132,8 @@ table {
     .botonesCarrito {
 
         @include flex(row, center, center);
+        flex-flow: wrap;
+        gap: 1rem;
     }
     
     .calculo {
