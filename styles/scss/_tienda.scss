@@ -39,7 +39,10 @@
             
                 &:active {
                     transform: scale(0.9);
-                    background: linear-gradient(to bottom, #ffffff, #8b8b8baf, #00000044);
+                }
+
+                &.botonAgregado {
+                    background: linear-gradient(to bottom, #00ff11, #22ff00af, #04ff0044);
                 }
             }
         }
