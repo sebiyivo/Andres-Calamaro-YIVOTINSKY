@@ -837,7 +837,7 @@ table tbody tr td .cantidad:hover {
 .botonesCarrito {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
 }
 .botonesCarrito .botonVolverALaTienda {
@@ -848,21 +848,27 @@ table tbody tr td .cantidad:hover {
 .botonesCarrito .botonVolverALaTienda:active {
   transform: scale(0.9);
 }
-.botonesCarrito .botonVaciarCarrito {
+.botonesCarrito .botonesCarritoPrincipales {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+.botonesCarrito .botonesCarritoPrincipales .botonVaciarCarrito {
   background: linear-gradient(to bottom, #ff9500, rgba(255, 157, 0, 0.6862745098), rgba(255, 157, 0, 0.2666666667));
   color: #ffffff;
   margin-right: 1rem;
 }
-.botonesCarrito .botonVaciarCarrito:active {
+.botonesCarrito .botonesCarritoPrincipales .botonVaciarCarrito:active {
   transform: scale(0.9);
 }
-.botonesCarrito .botonComprar {
+.botonesCarrito .botonesCarritoPrincipales .botonComprar {
   background: linear-gradient(to bottom, #00ff00, rgba(21, 255, 0, 0.6862745098), rgba(21, 255, 0, 0.2666666667));
   color: #ffffff;
   font-weight: bolder;
   font-size: 1.2rem;
 }
-.botonesCarrito .botonComprar:active {
+.botonesCarrito .botonesCarritoPrincipales .botonComprar:active {
   transform: scale(0.9);
 }
 
@@ -872,11 +878,21 @@ table tbody tr td .cantidad:hover {
 @media screen and (max-width: 768px) {
   .botonesCarrito {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .botonesCarrito .botonVolverALaTienda {
+    margin-left: 2rem;
+  }
+  .botonesCarrito .botonesCarritoPrincipales {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-flow: wrap;
     gap: 1rem;
+    margin-left: 1rem;
   }
   .calculo {
     margin-left: 0.6rem;

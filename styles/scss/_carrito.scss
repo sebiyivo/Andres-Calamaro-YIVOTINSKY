@@ -83,10 +83,10 @@ table {
 
 .botonesCarrito {
 
-    @include flex(row, right, center);
+    @include flex(row, space-between, center);
 
     .botonVolverALaTienda {
-
+    
         background: linear-gradient(to bottom, #0008ff, #0d00ffaf, #0000ff44);
         color: $colorLetra;
         margin-right: 1rem;
@@ -97,31 +97,38 @@ table {
 
     }
 
-    .botonVaciarCarrito {
+    .botonesCarritoPrincipales {
 
-        background: linear-gradient(to bottom, #ff9500, #ff9d00af, #ff9d0044);
-        color: $colorLetra;
-        margin-right: 1rem;
+        @include flex(row, right, center);
     
-        &:active {
-            transform: scale(0.9);
+        .botonVaciarCarrito {
+    
+            background: linear-gradient(to bottom, #ff9500, #ff9d00af, #ff9d0044);
+            color: $colorLetra;
+            margin-right: 1rem;
+        
+            &:active {
+                transform: scale(0.9);
+            }
+        
         }
-    
-    }
-    
-    .botonComprar {
-    
-        background: linear-gradient(to bottom, #00ff00, #15ff00af, #15ff0044);
-        color: $colorLetra;
-        font-weight: bolder;
-        font-size: 1.2rem;
-    
-        &:active {
-            transform: scale(0.9);
+        
+        .botonComprar {
+        
+            background: linear-gradient(to bottom, #00ff00, #15ff00af, #15ff0044);
+            color: $colorLetra;
+            font-weight: bolder;
+            font-size: 1.2rem;
+        
+            &:active {
+                transform: scale(0.9);
+            }
+        
         }
-    
     }
+
 }
+
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// T A B L E T ///////////////////////////////////////////////////////////////////////// *
@@ -131,9 +138,22 @@ table {
 
     .botonesCarrito {
 
-        @include flex(row, center, center);
-        flex-flow: wrap;
+        @include flex(column, center, center);
         gap: 1rem;
+
+        .botonVolverALaTienda {
+
+            margin-left: 2rem
+        }
+
+        .botonesCarritoPrincipales {
+
+            @include flex(row, center, center);
+            gap: 1rem;
+            margin-left: 1rem
+
+        }
+
     }
     
     .calculo {
