@@ -109,6 +109,7 @@ const botonesEliminar = document.getElementsByClassName("botonEliminar")
 for (let i = 0; i < botonesEliminar.length; i++) {
    
     const boton = botonesEliminar[i];
+    let cantidadBoton = boton.parentElement.previousElementSibling.previousElementSibling.firstChild.value
 
     boton.onclick = () => {
 
@@ -142,7 +143,7 @@ for (let i = 0; i < botonesEliminar.length; i++) {
 
        boton.parentElement.parentElement.remove()
 
-       let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) - 1
+       let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) - cantidadBoton
        iconoCantidadCarrito.innerHTML = numeroCarrito
        
     }
