@@ -43,6 +43,13 @@
 
                 &.botonAgregado {
                     background: linear-gradient(to bottom, #00ff11, #22ff00af, #04ff0044);
+                    cursor: auto;
+                    border: #00ff11;
+                    --bs-btn-focus-shadow-rgb: none;
+
+                    &:active {
+                        transform: none;                        
+                    }
                 }
             }
         }

@@ -112,13 +112,29 @@ for (let i = 0; i < botonesEliminar.length; i++) {
 
     boton.onclick = () => {
 
+    //// RESTAURAR BOTON AGREGADO //// 
+
+        for (let i = 0; i < botonesAgregar.length; i++) {
+   
+            const botonAgregar = botonesAgregar[i];
+        
+                if (boton.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML == botonAgregar.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML) {
+                    
+                    botonAgregar.value = "Agregar al carrito"
+                    botonAgregar.className = "btn btn-primary botonAgregar" 
+                }      
+                
+            }
+        
+    ////////////////////////////
 
        const totalProducto = convertirANumero(boton.parentElement.previousElementSibling.innerHTML) 
-       console.log(totalProducto);
        subtotalActual = convertirANumero(subtotal.innerHTML)
+
        subtotalNuevo = subtotalActual - totalProducto
        ivaNuevo = subtotalNuevo * 0.21
        totalNuevo = subtotalNuevo * 1.21
+       
        subtotal.innerHTML = convertirAPrecio(subtotalNuevo) 
        iva.innerHTML = convertirAPrecio(ivaNuevo) 
        total.innerHTML = convertirAPrecio(totalNuevo) 
@@ -130,8 +146,8 @@ for (let i = 0; i < botonesEliminar.length; i++) {
        iconoCantidadCarrito.innerHTML = numeroCarrito
        
     }
-
 }
+
 
 /////////// MODIFICAR CANTIDAD /////////////
 
@@ -149,6 +165,23 @@ for (let i = 0; i < cantidadesCarrito.length; i++) {
         const nuevoTotal = cantidadNumero * precioCorrespondiente
 
         cantidad.parentElement.nextElementSibling.innerHTML = convertirAPrecio(nuevoTotal)
+
+        /////////// MODIFICAR TOTAL /////////////
+
+        const totalesCarrito = document.getElementsByClassName("precioTotalCarrito")
+        let acumSubtotal = 0
+
+        for (let i = 0; i < totalesCarrito.length; i++) {
+        
+            const total = totalesCarrito[i].innerHTML;
+        
+            acumSubtotal += convertirANumero(total)
+        
+        }
+
+        subtotal.innerHTML = convertirAPrecio(acumSubtotal)
+        iva.innerHTML = convertirAPrecio(acumSubtotal * 0.21)
+        total.innerHTML = convertirAPrecio(acumSubtotal * 1.21)
 
     }
     
@@ -170,3 +203,5 @@ for (let i = 0; i < totalesCarrito.length; i++) {
 subtotal.innerHTML = convertirAPrecio(acumSubtotal)
 iva.innerHTML = convertirAPrecio(acumSubtotal * 0.21)
 total.innerHTML = convertirAPrecio(acumSubtotal * 1.21)
+
+

@@ -742,6 +742,12 @@ footer ul li a:hover {
 }
 .lineaTienda .card .card-body .botonAgregar.botonAgregado {
   background: linear-gradient(to bottom, #00ff11, rgba(34, 255, 0, 0.6862745098), rgba(4, 255, 0, 0.2666666667));
+  cursor: auto;
+  border: #00ff11;
+  --bs-btn-focus-shadow-rgb: none;
+}
+.lineaTienda .card .card-body .botonAgregar.botonAgregado:active {
+  transform: none;
 }
 
 .iconoCarrito {
