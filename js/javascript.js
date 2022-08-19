@@ -48,6 +48,7 @@ const convertirAPrecio = (numero) => "$ " + numero
 ///////////////////////////////////////////// AGREGAR AL CARRITO ///////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const tienda = document.getElementById("tienda")
 const carrito = document.getElementById("carrito")
 const botonesAgregar = document.getElementsByClassName("botonAgregar")
 const iconoCantidadCarrito = document.getElementById("iconoCantidadCarrito")
@@ -97,9 +98,9 @@ vaciarCarrito.onclick = () => {
          productosCarrito[0].remove()
     }
 
-    subtotal.innerHTML = "$ 0.00"
-    iva.innerHTML = "$ 0.00"
-    total.innerHTML = "$ 0.00"
+    subtotal.innerHTML = "$ 0"
+    iva.innerHTML = "$ 0"
+    total.innerHTML = "$ 0"
 
     iconoCantidadCarrito.innerHTML = 0
 
@@ -221,3 +222,32 @@ iva.innerHTML = convertirAPrecio(acumSubtotal * 0.21)
 total.innerHTML = convertirAPrecio(acumSubtotal * 1.21)
 
 
+
+
+
+
+
+const memoriaCarrito = JSON.stringify(carrito.innerHTML)
+localStorage.setItem("infoCarrito", memoriaCarrito)
+
+const memoriaCarritoString = localStorage.getItem("infoCarrito")
+const memoriaCarritoDevolver = JSON.parse(memoriaCarritoString)
+carrito.innerHTML = memoriaCarritoDevolver
+
+////////////////////////////////////////////////////
+
+const memoriaNumeroCarrito = iconoCantidadCarrito.innerHTML
+localStorage.setItem("infoNumeroCarrito" , memoriaNumeroCarrito)
+
+const memoriaNumeroCarritoString = localStorage.getItem("infoNumeroCarrito")
+const memoriaNumeroCarritoDevolver = JSON.parse(memoriaNumeroCarritoString)
+iconoCantidadCarrito.innerHTML = memoriaNumeroCarritoDevolver
+
+////////////////////////////////////////////////////
+
+const memoriaTienda = JSON.stringify(tienda.innerHTML)
+localStorage.setItem("infoTienda", memoriaTienda)
+
+const memoriaTiendaString = localStorage.getItem("infoTienda")
+const memoriaTiendaDevolver = JSON.parse(memoriaTiendaString)
+tienda.innerHTML = memoriaTiendaDevolver
