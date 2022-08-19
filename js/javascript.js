@@ -239,8 +239,7 @@ carrito.innerHTML = memoriaCarritoDevolver
 const memoriaNumeroCarrito = iconoCantidadCarrito.innerHTML
 localStorage.setItem("infoNumeroCarrito" , memoriaNumeroCarrito)
 
-const memoriaNumeroCarritoString = localStorage.getItem("infoNumeroCarrito")
-const memoriaNumeroCarritoDevolver = JSON.parse(memoriaNumeroCarritoString)
+const memoriaNumeroCarritoDevolver = localStorage.getItem("infoNumeroCarrito")
 iconoCantidadCarrito.innerHTML = memoriaNumeroCarritoDevolver
 
 ////////////////////////////////////////////////////
