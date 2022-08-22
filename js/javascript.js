@@ -116,7 +116,6 @@ const botonesEliminar = document.getElementsByClassName("botonEliminar")
 for (let i = 0; i < botonesEliminar.length; i++) {
    
     const boton = botonesEliminar[i];
-    let cantidadBoton = boton.parentElement.previousElementSibling.previousElementSibling.firstChild.value
 
     boton.onclick = () => {
 
@@ -136,24 +135,25 @@ for (let i = 0; i < botonesEliminar.length; i++) {
         
 /////////// MODIFICAR TOTAL Y BORRAR LINEA /////////////
 
-       const totalProducto = convertirANumero(boton.parentElement.previousElementSibling.innerHTML) 
-       subtotalActual = convertirANumero(subtotal.innerHTML)
+        const totalProducto = convertirANumero(boton.parentElement.previousElementSibling.innerHTML) 
+        subtotalActual = convertirANumero(subtotal.innerHTML)
 
-       subtotalNuevo = subtotalActual - totalProducto
-       ivaNuevo = subtotalNuevo * 0.21
-       totalNuevo = subtotalNuevo * 1.21
-       
-       subtotal.innerHTML = convertirAPrecio(subtotalNuevo) 
-       iva.innerHTML = convertirAPrecio(ivaNuevo) 
-       total.innerHTML = convertirAPrecio(totalNuevo) 
+        subtotalNuevo = subtotalActual - totalProducto
+        ivaNuevo = subtotalNuevo * 0.21
+        totalNuevo = subtotalNuevo * 1.21
+            
+        subtotal.innerHTML = convertirAPrecio(subtotalNuevo) 
+        iva.innerHTML = convertirAPrecio(ivaNuevo) 
+        total.innerHTML = convertirAPrecio(totalNuevo) 
 
 
-       boton.parentElement.parentElement.remove()
+        boton.parentElement.parentElement.remove()
 
 /////////// MODIFICAR NUMERO CARRITO /////////////
-
-       let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) - cantidadBoton
-       iconoCantidadCarrito.innerHTML = numeroCarrito
+       
+        let cantidadBoton = boton.parentElement.previousElementSibling.previousElementSibling.firstChild.value
+        let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) - cantidadBoton
+        iconoCantidadCarrito.innerHTML = numeroCarrito
        
     }
 }
@@ -239,9 +239,12 @@ total.innerHTML = convertirAPrecio(acumSubtotal * 1.21)
 // const memoriaCarrito = JSON.stringify(carrito.innerHTML)
 // localStorage.setItem("infoCarrito", memoriaCarrito)
 
-// const memoriaCarritoString = localStorage.getItem("infoCarrito")
-// const memoriaCarritoDevolver = JSON.parse(memoriaCarritoString)
-// carrito.innerHTML = memoriaCarritoDevolver
+// if ("infoCarrito") {
+//     const memoriaCarritoString = localStorage.getItem("infoCarrito")
+//     const memoriaCarritoDevolver = JSON.parse(memoriaCarritoString)
+//     carrito.innerHTML = memoriaCarritoDevolver
+// }
+
 
 // ////////////////////////////////////////////////////
 
