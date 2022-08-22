@@ -74,25 +74,7 @@ if (localStorage.getItem("infoTienda")) {
 
 const convertirANumero = (precio) => parseFloat(precio.slice(2))
 const convertirAPrecio = (numero) => "$ " + numero
-
-const calcularTotal = () => {
-
-    const totalesCarrito = document.getElementsByClassName("precioTotalCarrito")
-    let acumSubtotal = 0
-    
-    for (let i = 0; i < totalesCarrito.length; i++) {
-    
-        const total = totalesCarrito[i].innerHTML;
-    
-        acumSubtotal += convertirANumero(total)
-    
-    }
-    
-    subtotal.innerHTML = convertirAPrecio(acumSubtotal)
-    iva.innerHTML = convertirAPrecio(acumSubtotal * 0.21)
-    total.innerHTML = convertirAPrecio(acumSubtotal * 1.21)
-    }
-
+///////////////////////////////////////////////////////////////////////////////////
 const guardarLocalNumeroCarrito = (numeroGuardar) => {
     const memoriaNumeroCarrito = numeroGuardar
         localStorage.setItem("infoNumeroCarrito" , memoriaNumeroCarrito)
@@ -111,62 +93,32 @@ const guardarLocalTienda = (htmlTiendaGuardar) => {
     const memoriaTienda = JSON.stringify(htmlTiendaGuardar) 
     localStorage.setItem("infoTienda", memoriaTienda)
 }
+///////////////////////////////////////////////////////////////////////////////////
+const calcularTotal = () => {
 
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////// AGREGAR AL CARRITO ///////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const botonesAgregar = document.getElementsByClassName("botonAgregar")
-
-for (let i = 0; i < botonesAgregar.length; i++) {
-   
-    const boton = botonesAgregar[i];
-
-    boton.onclick = () => {
-
-        if (boton.value == "Agregar al carrito") {
-            let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) + 1
-            iconoCantidadCarrito.innerHTML = numeroCarrito
-
-            guardarLocalNumeroCarrito(numeroCarrito)
-
-        
-        
-            boton.value = "AGREGADO"
-            boton.className += " botonAgregado"
-
-            carrito.innerHTML +=  `<tr class="productoEnCarrito">
-                                      <th scope="row"><img src="${boton.parentElement.previousElementSibling.src}" alt="${boton.parentElement.previousElementSibling.alt}" title="${boton.parentElement.previousElementSibling.title}"></th>
-                                      <td class="tituloCarrito">${boton.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML}</td>
-                                      <td class="precioCarrito">${boton.previousElementSibling.innerHTML}</td>
-                                      <td><input class="cantidad" type="number" value="1" min="1" max="99"></td>
-                                      <td class="precioTotalCarrito">${boton.previousElementSibling.innerHTML}</td>
-                                      <td><input class="btn botonEliminar" type="button" value="Eliminar" ></td>
-                                    </tr>` 
-
-
-            guardarLocalTienda(tienda.innerHTML)
-            guardarLocalCarrito(carrito.innerHTML)
-        }  
+    const totalesCarrito = document.getElementsByClassName("precioTotalCarrito")
+    let acumSubtotal = 0
+    
+    for (let i = 0; i < totalesCarrito.length; i++) {
+    
+        const total = totalesCarrito[i].innerHTML;
+    
+        acumSubtotal += convertirANumero(total)
+    
     }
-
+    
+    subtotal.innerHTML = convertirAPrecio(acumSubtotal)
+    iva.innerHTML = convertirAPrecio(acumSubtotal * 0.21)
+    total.innerHTML = convertirAPrecio(acumSubtotal * 1.21)
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////// VACIAR CARRITO ///////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+///////////////////////////////////////////////////////////////////////////////////
 const productosCarrito = document.getElementsByClassName("productoEnCarrito")
-const vaciarCarrito = document.getElementById("vaciarCarrito")
 
 const subtotal = document.getElementById("subtotal")
 const iva = document.getElementById("iva")
 const total = document.getElementById("total")
 
-vaciarCarrito.onclick = () => {
+const vaciarCarrito = () => {
 
     while (productosCarrito.length != 0) {
        
@@ -193,6 +145,59 @@ vaciarCarrito.onclick = () => {
     guardarLocalNumeroCarrito(0)
     guardarLocalTienda(tienda.innerHTML)
     guardarLocalCarrito(carrito.innerHTML)
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// AGREGAR AL CARRITO ///////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const botonesAgregar = document.getElementsByClassName("botonAgregar")
+
+for (let i = 0; i < botonesAgregar.length; i++) {
+   
+    const boton = botonesAgregar[i];
+
+    boton.onclick = () => {
+
+        if (boton.value == "Agregar al carrito") {
+            let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) + 1
+            iconoCantidadCarrito.innerHTML = numeroCarrito
+
+            guardarLocalNumeroCarrito(numeroCarrito)
+        
+            boton.value = "AGREGADO"
+            boton.className += " botonAgregado"
+
+            carrito.innerHTML +=  `<tr class="productoEnCarrito">
+                                      <th scope="row"><img src="${boton.parentElement.previousElementSibling.src}" alt="${boton.parentElement.previousElementSibling.alt}" title="${boton.parentElement.previousElementSibling.title}"></th>
+                                      <td class="tituloCarrito">${boton.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML}</td>
+                                      <td class="precioCarrito">${boton.previousElementSibling.innerHTML}</td>
+                                      <td><input class="cantidad" type="number" value="1" min="1" max="99"></td>
+                                      <td class="precioTotalCarrito">${boton.previousElementSibling.innerHTML}</td>
+                                      <td><input class="btn botonEliminar" type="button" value="Eliminar" ></td>
+                                    </tr>` 
+
+            calcularTotal()
+
+            guardarLocalTienda(tienda.innerHTML)
+            guardarLocalCarrito(carrito.innerHTML)
+        }  
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// VACIAR CARRITO ///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const vaciarCarritoBoton = document.getElementById("vaciarCarrito")
+
+
+vaciarCarritoBoton.onclick = () => {
+
+  vaciarCarrito()
 
 }
 
