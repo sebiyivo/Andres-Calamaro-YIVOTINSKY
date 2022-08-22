@@ -68,7 +68,7 @@ for (let i = 0; i < botonesAgregar.length; i++) {
         boton.className += " botonAgregado"
 
         carrito.innerHTML +=  `<tr class="productoEnCarrito">
-                                  <th scope="row"><${boton.parentElement.previousElementSibling}></th>
+                                  <th scope="row"><img src="${boton.parentElement.previousElementSibling.src}" alt="${boton.parentElement.previousElementSibling.alt}" title="${boton.parentElement.previousElementSibling.title}"></th>
                                   <td class="tituloCarrito">${boton.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML}</td>
                                   <td class="precioCarrito">${boton.previousElementSibling.innerHTML}</td>
                                   <td><input class="cantidad" type="number" value="1" min="1" max="99"></td>
