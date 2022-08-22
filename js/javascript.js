@@ -181,6 +181,7 @@ for (let i = 0; i < botonesAgregar.length; i++) {
 
             guardarLocalTienda(tienda.innerHTML)
             guardarLocalCarrito(carrito.innerHTML)
+            generarHandlers()
         }  
     }
 
@@ -199,6 +200,10 @@ vaciarCarritoBoton.onclick = () => {
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// REGENERAR HANDLERS ////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const generarHandlers = () => {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// ELIMINAR PRODUCTO ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -253,7 +258,8 @@ for (let i = 0; i < botonesEliminar.length; i++) {
         guardarLocalTienda(tienda.innerHTML)
         guardarLocalCarrito(carrito.innerHTML)
 
-        location.reload()
+        // location.reload()
+        generarHandlers()
     }
 }
 
@@ -268,11 +274,12 @@ for (let i = 0; i < cantidadesCarrito.length; i++) {
     const cantidad = cantidadesCarrito[i];
     const precioCorrespondiente = convertirANumero(cantidad.parentElement.previousElementSibling.innerHTML)
 
-    cantidad.oninput = () => {
+    cantidad.oninput = (e) => {
 
         const cantidadNumero = cantidadesCarrito[i].value
         const nuevoTotal = cantidadNumero * precioCorrespondiente
 
+        cantidad.setAttribute("value", e.target.value)
         cantidad.parentElement.nextElementSibling.innerHTML = convertirAPrecio(nuevoTotal)
 
 /////////// MODIFICAR TOTAL /////////////
@@ -301,6 +308,9 @@ calcularTotal()
     
 }
 
+}
+
+generarHandlers()
 calcularTotal()
 
 
