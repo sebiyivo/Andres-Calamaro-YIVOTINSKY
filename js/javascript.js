@@ -49,6 +49,24 @@ if (localStorage.getItem("infoNumeroCarrito")) {
     iconoCantidadCarrito.innerHTML = memoriaNumeroCarritoDevolver
 }
 
+const carrito = document.getElementById("carrito")
+
+if (localStorage.getItem("infoCarrito")) {
+
+    const memoriaCarritoString = localStorage.getItem("infoCarrito")
+    const memoriaCarritoDevolver = JSON.parse(memoriaCarritoString)
+    carrito.innerHTML = memoriaCarritoDevolver
+}
+    
+const tienda = document.getElementById("tienda")
+
+if (localStorage.getItem("infoTienda")) {
+
+    const memoriaTiendaString = localStorage.getItem("infoTienda")
+    const memoriaTiendaDevolver = JSON.parse(memoriaTiendaString)
+    tienda.innerHTML = memoriaTiendaDevolver
+}
+    
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// FUNCIONES ////////////////////////////////////////////////////////////
@@ -80,8 +98,19 @@ const guardarLocalNumeroCarrito = (numeroGuardar) => {
         localStorage.setItem("infoNumeroCarrito" , memoriaNumeroCarrito)
 }    
 
+const guardarLocalCarrito = (htmlCarritoGuardar) => {
 
+    // carrito.innerHTML 
+    const memoriaCarrito = JSON.stringify(htmlCarritoGuardar) 
+    localStorage.setItem("infoCarrito", memoriaCarrito)
+}
 
+const guardarLocalTienda = (htmlTiendaGuardar) => {
+
+    // tienda.innerHTML 
+    const memoriaTienda = JSON.stringify(htmlTiendaGuardar) 
+    localStorage.setItem("infoTienda", memoriaTienda)
+}
 
 
 
@@ -90,8 +119,6 @@ const guardarLocalNumeroCarrito = (numeroGuardar) => {
 ///////////////////////////////////////////// AGREGAR AL CARRITO ///////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const tienda = document.getElementById("tienda")
-const carrito = document.getElementById("carrito")
 const botonesAgregar = document.getElementsByClassName("botonAgregar")
 
 for (let i = 0; i < botonesAgregar.length; i++) {
@@ -120,6 +147,9 @@ for (let i = 0; i < botonesAgregar.length; i++) {
                                       <td><input class="btn botonEliminar" type="button" value="Eliminar" ></td>
                                     </tr>` 
 
+
+            guardarLocalTienda(tienda.innerHTML)
+            guardarLocalCarrito(carrito.innerHTML)
         }  
     }
 
@@ -143,6 +173,17 @@ vaciarCarrito.onclick = () => {
          productosCarrito[0].remove()
     }
 
+//// RESTAURAR BOTONES AGREGADO //// 
+
+    for (let i = 0; i < botonesAgregar.length; i++) {
+    
+        const botonAgregar = botonesAgregar[i];
+  
+        botonAgregar.value = "Agregar al carrito"
+        botonAgregar.className = "btn btn-primary botonAgregar" 
+                
+        }   
+
     subtotal.innerHTML = "$ 0"
     iva.innerHTML = "$ 0"
     total.innerHTML = "$ 0"
@@ -150,6 +191,8 @@ vaciarCarrito.onclick = () => {
     iconoCantidadCarrito.innerHTML = 0
 
     guardarLocalNumeroCarrito(0)
+    guardarLocalTienda(tienda.innerHTML)
+    guardarLocalCarrito(carrito.innerHTML)
 
 }
 
@@ -203,6 +246,9 @@ for (let i = 0; i < botonesEliminar.length; i++) {
 
         guardarLocalNumeroCarrito(numeroCarrito)
        
+
+        guardarLocalTienda(tienda.innerHTML)
+        guardarLocalCarrito(carrito.innerHTML)
     }
 }
 
@@ -243,6 +289,9 @@ calcularTotal()
         iconoCantidadCarrito.innerHTML = acumTotalCantidades
 
         guardarLocalNumeroCarrito(acumTotalCantidades)
+
+        guardarLocalTienda(tienda.innerHTML)
+        guardarLocalCarrito(carrito.innerHTML)
     }
     
 }
@@ -250,21 +299,4 @@ calcularTotal()
 calcularTotal()
 
 
-// const memoriaCarrito = JSON.stringify(carrito.innerHTML)
-// localStorage.setItem("infoCarrito", memoriaCarrito)
 
-// if ("infoCarrito") {
-//     const memoriaCarritoString = localStorage.getItem("infoCarrito")
-//     const memoriaCarritoDevolver = JSON.parse(memoriaCarritoString)
-//     carrito.innerHTML = memoriaCarritoDevolver
-// }
-
-
-// ////////////////////////////////////////////////////
-
-// const memoriaTienda = JSON.stringify(tienda.innerHTML)
-// localStorage.setItem("infoTienda", memoriaTienda)
-
-// const memoriaTiendaString = localStorage.getItem("infoTienda")
-// const memoriaTiendaDevolver = JSON.parse(memoriaTiendaString)
-// tienda.innerHTML = memoriaTiendaDevolver
