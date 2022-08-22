@@ -254,6 +254,8 @@ for (let i = 0; i < botonesEliminar.length; i++) {
 
         guardarLocalTienda(tienda.innerHTML)
         guardarLocalCarrito(carrito.innerHTML)
+
+        location.reload()
     }
 }
 
