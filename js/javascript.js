@@ -53,8 +53,7 @@ const carrito = document.getElementById("carrito")
 
 if (localStorage.getItem("infoCarrito")) {
 
-    const memoriaCarritoString = localStorage.getItem("infoCarrito")
-    const memoriaCarritoDevolver = JSON.parse(memoriaCarritoString)
+    const memoriaCarritoDevolver = localStorage.getItem("infoCarrito")
     carrito.innerHTML = memoriaCarritoDevolver
 }
     
@@ -62,8 +61,7 @@ const tienda = document.getElementById("tienda")
 
 if (localStorage.getItem("infoTienda")) {
 
-    const memoriaTiendaString = localStorage.getItem("infoTienda")
-    const memoriaTiendaDevolver = JSON.parse(memoriaTiendaString)
+    const memoriaTiendaDevolver = localStorage.getItem("infoTienda")
     tienda.innerHTML = memoriaTiendaDevolver
 }
     
@@ -83,14 +81,14 @@ const guardarLocalNumeroCarrito = (numeroGuardar) => {
 const guardarLocalCarrito = (htmlCarritoGuardar) => {
 
     // carrito.innerHTML 
-    const memoriaCarrito = JSON.stringify(htmlCarritoGuardar) 
+    const memoriaCarrito = htmlCarritoGuardar
     localStorage.setItem("infoCarrito", memoriaCarrito)
 }
 
 const guardarLocalTienda = (htmlTiendaGuardar) => {
 
     // tienda.innerHTML 
-    const memoriaTienda = JSON.stringify(htmlTiendaGuardar) 
+    const memoriaTienda = htmlTiendaGuardar
     localStorage.setItem("infoTienda", memoriaTienda)
 }
 ///////////////////////////////////////////////////////////////////////////////////
