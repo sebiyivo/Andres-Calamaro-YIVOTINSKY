@@ -258,7 +258,6 @@ for (let i = 0; i < botonesEliminar.length; i++) {
         guardarLocalTienda(tienda.innerHTML)
         guardarLocalCarrito(carrito.innerHTML)
 
-        // location.reload()
         generarHandlers()
     }
 }
@@ -314,9 +313,17 @@ calcularTotal()
 ///////////////////////////////////////////// COMPRAR //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const comprar = document.getElementById("comprar")
 const confirmar = document.getElementById("confirmar")
 
 confirmar.onclick = () => {
+
+    const datosCompra = document.getElementsByClassName("datoCompra")
+
+    for (let i = 0; i < datosCompra.length; i++) {
+        const datoCompra = datosCompra[i];
+        datoCompra.value = "" 
+    }
 
     vaciarCarrito()
 
@@ -325,5 +332,4 @@ confirmar.onclick = () => {
 generarHandlers()
 calcularTotal()
 
-
-
+console.log(total.innerHTML);
