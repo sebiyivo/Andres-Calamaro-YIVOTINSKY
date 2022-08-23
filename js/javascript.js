@@ -108,6 +108,12 @@ const calcularTotal = () => {
     subtotal.innerHTML = convertirAPrecio(acumSubtotal)
     iva.innerHTML = convertirAPrecio(acumSubtotal * 0.21)
     total.innerHTML = convertirAPrecio(acumSubtotal * 1.21)
+
+    if (total.innerHTML == "$ 0") {
+        comprar.disabled = true
+    } else {
+        comprar.disabled = false
+    }
 }
 ///////////////////////////////////////////////////////////////////////////////////
 const productosCarrito = document.getElementsByClassName("productoEnCarrito")
