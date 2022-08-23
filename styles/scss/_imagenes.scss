@@ -37,22 +37,27 @@
 
 .modal {
 
-  .modal-dialog {
-    max-width: 80%;
-    background-color: #000000;
+  &.modalImagenes {
 
-    .modal-content{
-      border: #000000 solid 10px;
-      border-radius: 0;
-
-      .btn-close {
-        position: absolute;
-        cursor: pointer;
-        font-size: 2rem;
-        right: 0;
+    .modal-dialog {
+      max-width: 80%;
+      background-color: #000000;
+  
+      .modal-content{
+        border: #000000 solid 10px;
+        border-radius: 0;
+  
+        .btn-close {
+          position: absolute;
+          cursor: pointer;
+          font-size: 2rem;
+          right: 0;
+        }
       }
     }
+
   }
+
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -92,9 +97,13 @@
     }
 
     .modal.show {
-      display: flex !important;
-      justify-content: center; 
-      align-items: center;  
+      
+      &.modalImagenes {
+        display: flex !important;
+        justify-content: center; 
+        align-items: center;  
+      }
+      
     }
     
   }   
@@ -116,9 +125,13 @@
 
   .modal {
 
-    .modal-dialog {
-      max-width: 100%;
+    &.modalImagenes {
+
+      .modal-dialog {
+        max-width: 100%;
+      }
     }
+   
   }
   
 }

@@ -352,7 +352,7 @@
               <a href="./tienda.html"> <input class="btn botonVolverALaTienda" type="button" value="Volver a la tienda"></a>
               <div class="botonesCarritoPrincipales">
                 <input id="vaciarCarrito" class="btn botonVaciarCarrito" type="button" value="VACIAR CARRITO">
-                <input id="comprar" class="btn botonComprar" type="button" value="COMPRAR">  
+                <input id="comprar" class="btn botonComprar" type="button" value="COMPRAR" data-bs-toggle="modal" data-bs-target="#exampleModal">  
               </div>
             </div>
             
@@ -361,6 +361,25 @@
           <!--  FIN PRUEBA ///////////////////////////////////////////// -->
           
         </div>
+
+        <div class="modal modalComprar fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ¿Desea confirmar su compra?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">CONFIRMAR COMPRA</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a href="carrito.html" id="iconoCantidadCarrito" class="iconoCantidadCarrito">0</a>
         <a href="carrito.html" class="iconoCarrito"> <img src="../assets/carrito.png" alt="Carrito"></a>
     </main>   

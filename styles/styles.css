@@ -546,15 +546,15 @@ footer ul li a:hover {
   cursor: pointer;
 }
 
-.modal .modal-dialog {
+.modal.modalImagenes .modal-dialog {
   max-width: 80%;
   background-color: #000000;
 }
-.modal .modal-dialog .modal-content {
+.modal.modalImagenes .modal-dialog .modal-content {
   border: #000000 solid 10px;
   border-radius: 0;
 }
-.modal .modal-dialog .modal-content .btn-close {
+.modal.modalImagenes .modal-dialog .modal-content .btn-close {
   position: absolute;
   cursor: pointer;
   font-size: 2rem;
@@ -619,7 +619,7 @@ footer ul li a:hover {
   .imagenes .imagen14 {
     grid-area: 3/2/4/3;
   }
-  .modal.show {
+  .modal.show.modalImagenes {
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -641,7 +641,7 @@ footer ul li a:hover {
     justify-content: center;
     align-items: center;
   }
-  .modal .modal-dialog {
+  .modal.modalImagenes .modal-dialog {
     max-width: 100%;
   }
 }
@@ -776,6 +776,10 @@ footer ul li a:hover {
 }
 .iconoCantidadCarrito:hover {
   color: #FFF;
+}
+
+.modal.modalComprar {
+  color: #0000ff;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
