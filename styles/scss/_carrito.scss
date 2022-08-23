@@ -129,6 +129,62 @@ table {
 
 }
 
+.modal {
+
+    &.modalComprar {
+
+        .modal-dialog {
+           
+            .modal-content {
+                background-color: #373737;
+
+                .modal-header {
+
+                    .modal-title {
+                        font-weight: bolder;
+                        text-shadow: map-get($neon, neonAzul);
+                    }
+
+                }
+
+                .modal-body {
+
+                    font-weight: bolder;
+                    text-shadow: map-get($neon, neonRojo);
+
+                    label {
+                        text-shadow: map-get($neon, neonRojo);
+                    }
+
+                    input {
+                        text-align: center;
+                    }
+                    
+                }
+
+                .modal-footer {
+                    
+                    .botonCancelar {
+
+                        background: linear-gradient(to bottom, #ff0000, #ff0000af, #ff000044);
+                        color: $colorLetra;
+
+                    }
+
+                    .botonConfirmar {
+
+                        background: linear-gradient(to bottom, #00ff00, #15ff00af, #15ff0044);
+                        color: $colorLetra;
+                        font-weight: bolder;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// T A B L E T ///////////////////////////////////////////////////////////////////////// *
