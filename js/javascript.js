@@ -1,45 +1,6 @@
-class Disco {
-    constructor(imagen, nombre, precio) {
-        this.imagen = imagen
-        this.nombre = nombre
-        this.precio = precio
-  
-    }
-
-}
-
-class Carrito {
-    constructor() {
-        this.valorTotal = 0
-        this.cantidadItems = 0
-        this.discos = []
-    }
-
-    agregarAlCarrito_ (Disco) {
- 
-        if (!this.discos.includes(Disco)) {
-
-            this.valorTotal += Disco.precio
-            this.cantidadItems++
-            this.discos.push(Disco)
-        }  
-    }
-
-    comprar () {
-        for (const disco of discos) {
-            disco.vendido = true
-        }
-        this.valorTotal = 0
-        this.cantidadItems = 0
-        this.discos = []
-    }
-
-    
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////// RECUPERAR DATOS DEL LOCAL STORAGE //////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const iconoCantidadCarrito = document.getElementById("iconoCantidadCarrito")
 
@@ -65,93 +26,6 @@ if (localStorage.getItem("infoTienda")) {
     tienda.innerHTML = memoriaTiendaDevolver
 }
     
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////// FUNCIONES ////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const convertirANumero = (precio) => parseFloat(precio.slice(2))
-const convertirAPrecio = (numero) => "$ " + numero
-///////////////////////////////////////////////////////////////////////////////////
-const guardarLocalNumeroCarrito = (numeroGuardar) => {
-    const memoriaNumeroCarrito = numeroGuardar
-        localStorage.setItem("infoNumeroCarrito" , memoriaNumeroCarrito)
-}    
-
-const guardarLocalCarrito = (htmlCarritoGuardar) => {
-
-    // carrito.innerHTML 
-    const memoriaCarrito = htmlCarritoGuardar
-    localStorage.setItem("infoCarrito", memoriaCarrito)
-}
-
-const guardarLocalTienda = (htmlTiendaGuardar) => {
-
-    // tienda.innerHTML 
-    const memoriaTienda = htmlTiendaGuardar
-    localStorage.setItem("infoTienda", memoriaTienda)
-}
-///////////////////////////////////////////////////////////////////////////////////
-const calcularTotal = () => {
-
-    const totalesCarrito = document.getElementsByClassName("precioTotalCarrito")
-    let acumSubtotal = 0
-    
-    for (let i = 0; i < totalesCarrito.length; i++) {
-    
-        const total = totalesCarrito[i].innerHTML;
-    
-        acumSubtotal += convertirANumero(total)
-    
-    }
-    
-    subtotal.innerHTML = convertirAPrecio(acumSubtotal)
-    iva.innerHTML = convertirAPrecio(acumSubtotal * 0.21)
-    total.innerHTML = convertirAPrecio(acumSubtotal * 1.21)
-
-    if (total.innerHTML == "$ 0") {
-        comprar.disabled = true
-    } else {
-        comprar.disabled = false
-    }
-}
-///////////////////////////////////////////////////////////////////////////////////
-const productosCarrito = document.getElementsByClassName("productoEnCarrito")
-
-const subtotal = document.getElementById("subtotal")
-const iva = document.getElementById("iva")
-const total = document.getElementById("total")
-
-const vaciarCarrito = () => {
-
-    while (productosCarrito.length != 0) {
-       
-         productosCarrito[0].remove()
-    }
-
-//// RESTAURAR BOTONES AGREGADO //// 
-
-    for (let i = 0; i < botonesAgregar.length; i++) {
-    
-        const botonAgregar = botonesAgregar[i];
-  
-        botonAgregar.value = "Agregar al carrito"
-        botonAgregar.className = "btn btn-primary botonAgregar" 
-                
-        }   
-
-    subtotal.innerHTML = "$ 0"
-    iva.innerHTML = "$ 0"
-    total.innerHTML = "$ 0"
-
-    iconoCantidadCarrito.innerHTML = 0
-
-    guardarLocalNumeroCarrito(0)
-    guardarLocalTienda(tienda.innerHTML)
-    guardarLocalCarrito(carrito.innerHTML)
-
-}
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// AGREGAR AL CARRITO ///////////////////////////////////////////////////
@@ -199,7 +73,6 @@ for (let i = 0; i < botonesAgregar.length; i++) {
 
 const vaciarCarritoBoton = document.getElementById("vaciarCarrito")
 
-
 vaciarCarritoBoton.onclick = () => {
 
   vaciarCarrito()
@@ -222,7 +95,7 @@ for (let i = 0; i < botonesEliminar.length; i++) {
 
     boton.onclick = () => {
 
-//// RESTAURAR BOTON AGREGADO //// 
+    //// RESTAURAR BOTON AGREGADO //// 
 
         for (let i = 0; i < botonesAgregar.length; i++) {
    
@@ -236,7 +109,7 @@ for (let i = 0; i < botonesEliminar.length; i++) {
                 
             }
         
-/////////// MODIFICAR TOTAL Y BORRAR LINEA /////////////
+    /////////// MODIFICAR TOTAL Y BORRAR LINEA /////////////
 
         const totalProducto = convertirANumero(boton.parentElement.previousElementSibling.innerHTML) 
         subtotalActual = convertirANumero(subtotal.innerHTML)
@@ -249,17 +122,16 @@ for (let i = 0; i < botonesEliminar.length; i++) {
         iva.innerHTML = convertirAPrecio(ivaNuevo) 
         total.innerHTML = convertirAPrecio(totalNuevo) 
 
-
         boton.parentElement.parentElement.remove()
+        calcularTotal()
 
-/////////// MODIFICAR NUMERO CARRITO /////////////
+    /////////// MODIFICAR NUMERO CARRITO /////////////
        
         let cantidadBoton = boton.parentElement.previousElementSibling.previousElementSibling.firstChild.value
         let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) - cantidadBoton
         iconoCantidadCarrito.innerHTML = numeroCarrito
 
         guardarLocalNumeroCarrito(numeroCarrito)
-       
 
         guardarLocalTienda(tienda.innerHTML)
         guardarLocalCarrito(carrito.innerHTML)
@@ -287,11 +159,11 @@ for (let i = 0; i < cantidadesCarrito.length; i++) {
         cantidad.setAttribute("value", e.target.value)
         cantidad.parentElement.nextElementSibling.innerHTML = convertirAPrecio(nuevoTotal)
 
-/////////// MODIFICAR TOTAL /////////////
+    /////////// MODIFICAR TOTAL /////////////
 
-calcularTotal()
+        calcularTotal()
 
-/////////// MODIFICAR NUMERO CARRITO /////////////
+    /////////// MODIFICAR NUMERO CARRITO /////////////
 
         let acumTotalCantidades = 0
 
@@ -338,4 +210,3 @@ confirmar.onclick = () => {
 generarHandlers()
 calcularTotal()
 
-console.log(total.innerHTML);
