@@ -62,6 +62,17 @@ for (let i = 0; i < botonesAgregar.length; i++) {
             guardarLocalTienda(tienda.innerHTML)
             guardarLocalCarrito(carrito.innerHTML)
             generarHandlers()
+
+            Swal.fire({
+                background: '#373737',
+                color: '#ffffff',
+                position: 'center',
+                icon: 'success',
+                iconColor: '#11cf00',
+                title: 'Agregado al carrito!',
+                showConfirmButton: false,
+                timer: 1500
+              })
         }  
     }
 
@@ -94,49 +105,79 @@ for (let i = 0; i < botonesEliminar.length; i++) {
     const boton = botonesEliminar[i];
 
     boton.onclick = () => {
-
-    //// RESTAURAR BOTON AGREGADO //// 
-
-        for (let i = 0; i < botonesAgregar.length; i++) {
-   
-            const botonAgregar = botonesAgregar[i];
         
-                if (boton.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML == botonAgregar.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML) {
-                    
-                    botonAgregar.value = "Agregar al carrito"
-                    botonAgregar.className = "btn btn-primary botonAgregar" 
-                }      
-                
-            }
-        
-    /////////// MODIFICAR TOTAL Y BORRAR LINEA /////////////
+        Swal.fire({
+            background: '#373737',
+            color: '#ffffff',
+            title: '¿Esta seguro que desea eliminarlo?',
+            icon: 'warning',
+            iconColor: '#ff0000',
+            showCancelButton: true,
+            confirmButtonColor: '#00b400',
+            cancelButtonColor: '#ff0000af',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Si, eliminarlo'
+          }).then((result) => {
 
-        const totalProducto = convertirANumero(boton.parentElement.previousElementSibling.innerHTML) 
-        subtotalActual = convertirANumero(subtotal.innerHTML)
+            if (result.isConfirmed) {
+              Swal.fire({
+                background: '#373737',
+                color: '#ffffff',
+                icon: 'success',
+                iconColor: '#11cf00',
+                title: 'Eliminado!',
+                text: "El disco ha sido eliminado del carrito",
+                confirmButtonColor: '#11cf00',
+                },
+                'success'
+              )
 
-        subtotalNuevo = subtotalActual - totalProducto
-        ivaNuevo = subtotalNuevo * 0.21
-        totalNuevo = subtotalNuevo * 1.21
+            //// RESTAURAR BOTON AGREGADO //// 
+
+            for (let i = 0; i < botonesAgregar.length; i++) {
             
-        subtotal.innerHTML = convertirAPrecio(subtotalNuevo) 
-        iva.innerHTML = convertirAPrecio(ivaNuevo) 
-        total.innerHTML = convertirAPrecio(totalNuevo) 
+                const botonAgregar = botonesAgregar[i];
+            
+                    if (boton.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML == botonAgregar.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML) {
 
-        boton.parentElement.parentElement.remove()
-        calcularTotal()
+                        botonAgregar.value = "Agregar al carrito"
+                        botonAgregar.className = "btn btn-primary botonAgregar" 
+                    }      
 
-    /////////// MODIFICAR NUMERO CARRITO /////////////
-       
-        let cantidadBoton = boton.parentElement.previousElementSibling.previousElementSibling.firstChild.value
-        let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) - cantidadBoton
-        iconoCantidadCarrito.innerHTML = numeroCarrito
+                }
+            
+            /////////// MODIFICAR TOTAL Y BORRAR LINEA /////////////
+            
+            const totalProducto = convertirANumero(boton.parentElement.previousElementSibling.innerHTML) 
+            subtotalActual = convertirANumero(subtotal.innerHTML)
+            
+            subtotalNuevo = subtotalActual - totalProducto
+            ivaNuevo = subtotalNuevo * 0.21
+            totalNuevo = subtotalNuevo * 1.21
 
-        guardarLocalNumeroCarrito(numeroCarrito)
-
-        guardarLocalTienda(tienda.innerHTML)
-        guardarLocalCarrito(carrito.innerHTML)
-
-        generarHandlers()
+            subtotal.innerHTML = convertirAPrecio(subtotalNuevo) 
+            iva.innerHTML = convertirAPrecio(ivaNuevo) 
+            total.innerHTML = convertirAPrecio(totalNuevo) 
+            
+            boton.parentElement.parentElement.remove()
+            calcularTotal()
+            
+            /////////// MODIFICAR NUMERO CARRITO /////////////
+            
+            let cantidadBoton = boton.parentElement.previousElementSibling.previousElementSibling.firstChild.value
+            let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) - cantidadBoton
+            iconoCantidadCarrito.innerHTML = numeroCarrito
+            
+            guardarLocalNumeroCarrito(numeroCarrito)
+            
+            guardarLocalTienda(tienda.innerHTML)
+            guardarLocalCarrito(carrito.innerHTML)
+            
+            generarHandlers()                
+            
+            }
+        })
+    
     }
 }
 
