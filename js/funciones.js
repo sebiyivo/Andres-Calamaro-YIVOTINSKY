@@ -28,6 +28,38 @@ const guardarLocalTienda = (htmlTiendaGuardar) => {
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
+const consumirApi = async () => {
+
+    const discosCatalogo = document.getElementsByClassName("discoCatalogo")
+    let i = 0
+
+    const resp = await fetch("../js/api.json")
+    const datos = await resp.json()
+
+    datos.forEach(dato => {
+        
+        const imagen = dato.imagen
+        const titulo = dato.titulo
+        const banda = dato.banda
+        const precio = dato.precio
+
+        discosCatalogo[i].innerHTML =  `<img src="${imagen}" class="card-img-top" alt="${titulo}" title="${titulo}">
+                                        <div class="card-body">
+                                          <h5 class="card-title">${titulo}</h5>
+                                          <p class="card-text">${banda}</p>
+                                          <p class="card-price">$ ${precio}</p>
+                                          <input class="btn btn-primary botonAgregar" type="button" value="Agregar al carrito">
+                                        </div>`
+        
+        i++
+
+    });
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
 const subtotal = document.getElementById("subtotal")
 const iva = document.getElementById("iva")
 const total = document.getElementById("total")

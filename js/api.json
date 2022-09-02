@@ -1,0 +1,145 @@
+[{
+    "titulo": "DIOS LOS CRIA",
+    "imagen": "../assets/diosLosCria.jpg",
+    "banda": "SOLISTA",
+    "precio": 6000
+},
+{
+    "titulo": "CARGAR LA SUERTE",
+    "imagen": "../assets/cargarLaSuerte.jpg",
+    "banda": "SOLISTA",
+    "precio": 5000
+},
+{
+    "titulo": "VOLUMEN 11",
+    "imagen": "../assets/volumen11.jpg",
+    "banda": "SOLISTA",
+    "precio": 4000
+},
+{
+    "titulo": "BOHEMIO",
+    "imagen": "../assets/bohemio.png",
+    "banda": "SOLISTA",
+    "precio": 4500
+},
+{
+    "titulo": "ON THE ROCK",
+    "imagen": "../assets/onTheRock.jpg",
+    "banda": "SOLISTA",
+    "precio": 3500
+},
+{
+    "titulo": "LA LENGUA POPULAR",
+    "imagen": "../assets/laLenguaPopular.jpg",
+    "banda": "SOLISTA",
+    "precio": 3000
+},
+{
+    "titulo": "EL PALACIO DE LAS FLORES",
+    "imagen": "../assets/elPalacioDeLasFlores.png",
+    "banda": "SOLISTA",
+    "precio": 5000
+},
+{
+    "titulo": "TINTA ROJA",
+    "imagen": "../assets/tintaRoja.png",
+    "banda": "SOLISTA",
+    "precio": 5500
+},
+{
+    "titulo": "EL CANTANTE",
+    "imagen": "../assets/elCantante.jpg",
+    "banda": "SOLISTA",
+    "precio": 4500
+},
+{
+    "titulo": "EL SALMON",
+    "imagen": "../assets/elSalmon.jpg",
+    "banda": "SOLISTA",
+    "precio": 5500
+},
+{
+    "titulo": "HONESTIDAD BRUTAL",
+    "imagen": "../assets/honestidadBrutal.png",
+    "banda": "SOLISTA",
+    "precio": 5000
+},
+{
+    "titulo": "ALTA SUCIEDAD",
+    "imagen": "../assets/altaSuciedad.png",
+    "banda": "SOLISTA",
+    "precio": 4000
+},
+{
+    "titulo": "NADIE SALE VIVO DE AQUI",
+    "imagen": "../assets/nadieSaleVivoDeAqui.png",
+    "banda": "SOLISTA",
+    "precio": 3500
+},
+{
+    "titulo": "POR MIRARTE",
+    "imagen": "../assets/porMirarte.png",
+    "banda": "SOLISTA",
+    "precio": 3000
+},
+{
+    "titulo": "VIDA CRUEL",
+    "imagen": "../assets/vidaCruel.png",
+    "banda": "SOLISTA",
+    "precio": 2500
+},
+{
+    "titulo": "HOTEL CALAMARO",
+    "imagen": "../assets/hotelCalamaro.jpg",
+    "banda": "SOLISTA",
+    "precio": 4000
+},
+{
+    "titulo": "HASTA LUEGO",
+    "imagen": "../assets/hastaLuego.jpg",
+    "banda": "LOS RODRIGUEZ",
+    "precio": 5000
+},
+{
+    "titulo": "PALABRAS MAS, PALABRAS MENOS",
+    "imagen": "../assets/palabrasMasPalabrasMenos.png",
+    "banda": "LOS RODRIGUEZ",
+    "precio": 4500
+},
+{
+    "titulo": "SIN DOCUMENTOS",
+    "imagen": "../assets/sinDocumentos.png",
+    "banda": "LOS RODRIGUEZ",
+    "precio": 6000
+},
+{
+    "titulo": "DISCO PIRATA",
+    "imagen": "../assets/discoPirata.png",
+    "banda": "LOS RODRIGUEZ",
+    "precio": 4500
+},
+{
+    "titulo": "BUENA SUERTE",
+    "imagen": "../assets/buenaSuerte.png",
+    "banda": "LOS RODRIGUEZ",
+    "precio": 3500
+},
+{
+    "titulo": "HIMNO DE MI CORAZON",
+    "imagen": "../assets/himnoDeMiCorazon.jpg",
+    "banda": "LOS ABUELOS DE LA NADA",
+    "precio": 4000
+},
+{
+    "titulo": "VASOS Y BESOS",
+    "imagen": "../assets/vasosYBesos.jpg",
+    "banda": "LOS ABUELOS DE LA NADA",
+    "precio": 4500
+},
+{
+    "titulo": "LOS ABUELOS DE LA NADA",
+    "imagen": "../assets/losAbuelosDeLaNada.jpg",
+    "banda": "LOS ABUELOS DE LA NADA",
+    "precio": 3000
+}]
+
