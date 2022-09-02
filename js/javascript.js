@@ -2,8 +2,6 @@
 //////////////////////////////////////////// RECUPERAR DATOS DEL LOCAL STORAGE //////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-consumirApi()
-
 const iconoCantidadCarrito = document.getElementById("iconoCantidadCarrito")
 
 if (localStorage.getItem("infoNumeroCarrito")) {
@@ -26,58 +24,15 @@ if (localStorage.getItem("infoTienda")) {
 
     const memoriaTiendaDevolver = localStorage.getItem("infoTienda")
     tienda.innerHTML = memoriaTiendaDevolver
+} else {
+    consumirApi()
 }
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// AGREGAR AL CARRITO ///////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const botonesAgregar = document.getElementsByClassName("botonAgregar")
-
-for (let i = 0; i < botonesAgregar.length; i++) {
-   
-    const boton = botonesAgregar[i];
-
-    boton.onclick = () => {
-
-        if (boton.value == "Agregar al carrito") {
-            let numeroCarrito = parseInt(iconoCantidadCarrito.innerHTML) + 1
-            iconoCantidadCarrito.innerHTML = numeroCarrito
-
-            guardarLocalNumeroCarrito(numeroCarrito)
-        
-            boton.value = "AGREGADO"
-            boton.className += " botonAgregado"
-
-            carrito.innerHTML +=  `<tr class="productoEnCarrito">
-                                      <th scope="row"><img src="${boton.parentElement.previousElementSibling.src}" alt="${boton.parentElement.previousElementSibling.alt}" title="${boton.parentElement.previousElementSibling.title}"></th>
-                                      <td class="tituloCarrito">${boton.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML}</td>
-                                      <td class="precioCarrito">${boton.previousElementSibling.innerHTML}</td>
-                                      <td><input class="cantidad" type="number" value="1" min="1" max="99"></td>
-                                      <td class="precioTotalCarrito">${boton.previousElementSibling.innerHTML}</td>
-                                      <td><input class="btn botonEliminar" type="button" value="Eliminar" ></td>
-                                    </tr>` 
-
-            calcularTotal()
-
-            guardarLocalTienda(tienda.innerHTML)
-            guardarLocalCarrito(carrito.innerHTML)
-            generarHandlers()
-
-            Swal.fire({
-                background: '#373737',
-                color: '#ffffff',
-                position: 'center',
-                icon: 'success',
-                iconColor: '#11cf00',
-                title: 'Agregado al carrito!',
-                showConfirmButton: false,
-                timer: 1500
-              })
-        }  
-    }
-
-}
+agregarAlCarrito()
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////// VACIAR CARRITO ///////////////////////////////////////////////////////
