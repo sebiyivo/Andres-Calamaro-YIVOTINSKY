@@ -42,8 +42,35 @@ const vaciarCarritoBoton = document.getElementById("vaciarCarrito")
 
 vaciarCarritoBoton.onclick = () => {
 
-  vaciarCarrito()
+    Swal.fire({
+        background: '#373737',
+        color: '#ffffff',
+        title: '¿Esta seguro que desea vaciar el carrito?',
+        icon: 'warning',
+        iconColor: '#ff0000',
+        showCancelButton: true,
+        confirmButtonColor: '#00b400',
+        cancelButtonColor: '#ff0000af',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Confirmar'
+      }).then((result) => {
 
+        if (result.isConfirmed) {
+          Swal.fire({
+            background: '#373737',
+            color: '#ffffff',
+            icon: 'success',
+            iconColor: '#11cf00',
+            title: 'Vaciado!',
+            text: "El carrito ha sido limpiado",
+            confirmButtonColor: '#11cf00',
+            },
+            'success'
+          )  
+
+        vaciarCarrito()
+        }
+      })       
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +92,7 @@ for (let i = 0; i < botonesEliminar.length; i++) {
         Swal.fire({
             background: '#373737',
             color: '#ffffff',
-            title: '¿Esta seguro que desea eliminarlo?',
+            title: '¿Esta seguro que desea eliminar el producto?',
             icon: 'warning',
             iconColor: '#ff0000',
             showCancelButton: true,
@@ -190,17 +217,52 @@ for (let i = 0; i < cantidadesCarrito.length; i++) {
 
 const comprar = document.getElementById("comprar")
 const confirmar = document.getElementById("confirmar")
+const datosCompra = document.getElementsByClassName("datoCompra")
+
+const nombreCompra = document.getElementById("nombreCompra")
+const apellidoCompra = document.getElementById("apellidoCompra")
+const dniCompra = document.getElementById("dniCompra")
+const mailCompra = document.getElementById("mailCompra")
 
 confirmar.onclick = () => {
 
-    const datosCompra = document.getElementsByClassName("datoCompra")
+    ///// VERIFICAR SI COMPLETO TODOS LOS DATOS ///// 
+    if (nombreCompra.value.length == 0 || apellidoCompra.value.length == 0 || dniCompra.value.length == 0 || mailCompra.value.length == 0) {
 
-    for (let i = 0; i < datosCompra.length; i++) {
-        const datoCompra = datosCompra[i];
-        datoCompra.value = "" 
+        Swal.fire({
+            background: '#373737',
+            color: '#ffffff',
+            position: 'center',
+            icon: 'warning',
+            iconColor: '#ff0000',
+            title: 'Complete todos los datos antes de finalizar la compra',
+            showConfirmButton: false,
+            timer: 2000
+          })
+
+    ///// CONFIRMAR Y FINALIZAR LA COMPRA, VACIANDO EL CARRITO Y LIMPIANDO LOS CAMPOS /////     
+    } else {
+
+        for (let i = 0; i < datosCompra.length; i++) {
+            const datoCompra = datosCompra[i];
+            datoCompra.value = "" 
+        }
+    
+        vaciarCarrito()
+    
+        Swal.fire({
+            background: '#373737',
+            color: '#ffffff',
+            icon: 'success',
+            iconColor: '#11cf00',
+            title: 'Felicidades!',
+            text: "Su compra ha sido realizada con exito!",
+            confirmButtonColor: '#11cf00',
+            },
+            'success'
+        )
+        
     }
-
-    vaciarCarrito()
 
 }
 
